@@ -7,12 +7,12 @@ export default () => {
         alt="Nosotros con un juez"
         className=""
       />
+      <p className="text-[2rem] font-extrabold">
+        Nosotros somos tu estudio de abogacia!
+      </p>
       <p className="leading-relaxed tracking-wide">
         Tu lugar de <strong>confianza</strong>, ya lo tenes. <br />
         Consulta a nuestros profesionales, <strong>sin cargo</strong>.
-      </p>
-      <p className="text-[2rem] font-extrabold">
-        Nosotros somos tu estudio de abogacia!
       </p>
     </div>
   );

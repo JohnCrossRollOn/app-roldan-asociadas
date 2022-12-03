@@ -16,9 +16,11 @@ const Card = ({ content }) => {
         <p className="text-xl font-semibold">{title}</p>
         <p className="text-xs">{description}</p>
       </div>
-      <Link className="absolute bottom-0 z-10 right-0 m-2 bg-primario font-bold bg-primary border-8 border-white p-2 px-3 rounded-full">
-        Saber mas
-      </Link>
+      <div className="absolute z-10 grid grid-rows-1 place-items-center h-full w-full">
+        <Link className="row-start-2 font-bold bg-primary border-8 w-fit border-white p-2 px-3 rounded-full">
+          Saber mas
+        </Link>
+      </div>
     </div>
   );
 };
@@ -26,7 +28,10 @@ const Card = ({ content }) => {
 export default () => {
   return (
     <>
-      <p className="text-sm tracking-widest font-bold ">SERVICIOS</p>
+      <div className="flex flex-row items-center justify-center">
+        <p className="w-fit text-sm tracking-widest font-bold">SERVICIOS</p>
+        <hr className="bg-slate-800 w-full" />
+      </div>
       <div className="gap-4 overflow-hidden overflow-x-scroll -mx-4 scrollbar-hide">
         <div className="p-4 pt-0 pb-6 flex w-max gap-4">
           <Card
