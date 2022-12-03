@@ -14,10 +14,12 @@ const Card = ({ content }) => {
           className="h-full object-contain"
         />
       </div>
-      <p className="text-xl font-semibold">{title}</p>
-      <p className="text-xs bg-gradient-to-b from-slate-600 text-transparent bg-clip-text">
-        {description}
-      </p>
+      <div>
+        <p className="text-xl font-semibold">{title}</p>
+        <p className="text-xs bg-gradient-to-b from-slate-600 text-transparent bg-clip-text">
+          {description}
+        </p>
+      </div>
       <Link className="absolute z-10 -bottom-4 right-4 font-bold bg-primary w-fit p-2 px-3 rounded-full shadow-md">
         Saber mas
       </Link>

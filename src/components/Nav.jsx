@@ -12,8 +12,11 @@ export default () => (
       <li>Servicios</li>
       <li>Nosotros</li>
     </ul>
-    <div className="bg-primario font-bold bg-primary p-2 px-3 rounded-full shadow-md">
+    <a
+      href="#contacto"
+      className="bg-primario font-bold bg-primary p-2 px-3 rounded-full shadow-md"
+    >
       Contacto
-    </div>
+    </a>
   </nav>
 );
