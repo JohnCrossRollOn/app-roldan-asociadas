@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Card = ({ content }) => {
   const [title, description, img] = content;
   return (
-    <div className="relative grid grid-rows-6 gap-4 bg-white rounded-lg shadow-md p-4 w-[70vw] h-[50vh] overflow-hidden">
+    <div className="relative grid grid-rows-6 gap-4 bg-white rounded-lg shadow-md p-4 w-[70vw] h-[50vh]">
       <div className="w-full row-span-4 flex items-center justify-center object-contain">
         <img
           loading="lazy"
@@ -12,12 +12,14 @@ const Card = ({ content }) => {
           className="h-full object-contain"
         />
       </div>
-      <div>
-        <p className="text-xl font-semibold">{title}</p>
-        <p className="text-xs">{description}</p>
+      <div className="overflow-hidden">
+        <div className="h-max">
+          <p className="text-xl font-semibold">{title}</p>
+          <p className="text-xs">{description}</p>
+        </div>
       </div>
-      <div className="absolute z-10 grid grid-rows-1 place-items-center h-full w-full">
-        <Link className="row-start-2 font-bold bg-primary border-8 w-fit border-white p-2 px-3 rounded-full">
+      <div className="">
+        <Link className="absolute z-10 -bottom-4 right-4 font-bold bg-primary w-fit p-2 px-3 rounded-full">
           Saber mas
         </Link>
       </div>
