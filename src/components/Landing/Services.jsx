@@ -39,28 +39,38 @@ export default () => {
           <Card
             content={[
               'Accidentes de Transito',
-              '',
+              <p>
+                Abogados con sólida experiencia en reclamos y daños materiales
+                contra las compañias de seguros.
+                <ul className="mx-6 list-disc">
+                  <li>Auto</li>
+                  <li>Moto</li>
+                  <li>bicicleta</li>
+                  <li>Transportados</li>
+                  <li>Peatón</li>
+                </ul>
+              </p>,
               'https://ouch-cdn2.icons8.com/SyZqggsp27ro3KjKyMY0Z6EuC1kmjCIpFSPt3l9m1l8/rs:fit:1201:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNDcy/L2Y1NTExNDYxLTcw/MzUtNGRmNS04MTY2/LWNlZTgwOWNhMTI3/Zi5zdmc.png',
             ]}
           />
           <Card
             content={[
               'Infracciones de Transito',
-              'descripcion',
+              'Somos abogados especialistas en Derecho de Faltas de Tránsito. Brindamos un Servicio Legal para que no pagues de más, resolvemos tus multas de tránsito de forma on-line.',
               'https://ouch-cdn2.icons8.com/GrhMqPqiLgvZnDP-w1lk9sa0Io7ALchYrHC9BaovCbQ/rs:fit:608:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvMTY2/LzI0N2QyOWNlLTVi/ZDctNDNjZi1iZDI0/LTI4ZmYxNTc3YzNj/NS5zdmc.png',
             ]}
           />
           <Card
             content={[
               'Jubilaciones y Pensiones',
-              'descripcion',
+              'Consultoria Previsional, Jubilación Planificada, Pensión por Fallecimiento, Jubilación para Autónomos.',
               'https://ouch-cdn2.icons8.com/jRHIsyUjOBImDOe5SRKWsAfqco0vWYC7k8mX3hX3FIc/rs:fit:456:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvOTYy/LzQzYTZhZjdjLWZh/OGEtNGQzOS1iYWRk/LTU0NDdmNWYyYjE2/NC5zdmc.png',
             ]}
           />
           <Card
             content={[
               'Accidentes Laborales ART',
-              'descripcion',
+              'Abogados especialistas en Accidentes de Trabajo y Enfermedades Profesionales.',
               'https://ouch-cdn2.icons8.com/RyvNV1cEw8CcOq7TnzeRd1vsG2N2mLXCIJA1VdXumEA/rs:fit:608:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvODky/LzEzZjUyOWM3LWY1/NWUtNDE1ZC1hNWRj/LTQyOThhMGY3ZWVh/Mi5zdmc.png',
             ]}
           />
@@ -74,7 +84,7 @@ export default () => {
           <Card
             content={[
               'Divorcios, Familia y Sucesiones',
-              'descripcion',
+              'Profesionales calificados para asesorar y resolver todos los asuntos de familia. Respondabilidad Parental, Cuidado Personal, Régimen de Comunicación.',
               'https://ouch-cdn2.icons8.com/MivVWzG8zuSAd1ynjeh5LN6EVnB-AAzSzp9W-BnTIP0/rs:fit:608:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvMzY5/L2ZhOTA5ZjFmLTMw/NDAtNDBjYy1iZjA5/LWU1MTI2NDY0MzQ5/Yy5zdmc.png',
             ]}
           />
