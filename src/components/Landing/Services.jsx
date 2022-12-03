@@ -3,26 +3,24 @@ import { Link } from 'react-router-dom';
 const Card = ({ content }) => {
   const [title, description, img] = content;
   return (
-    <div className="relative grid grid-rows-6 gap-4 bg-white rounded-lg shadow-md p-4 w-[70vw] h-[50vh]">
-      <div className="w-full row-span-4 flex items-center justify-center object-contain">
-        <img
-          loading="lazy"
-          src={img || ''}
-          alt="A service illustration"
-          className="h-full object-contain"
-        />
-      </div>
-      <div className="overflow-hidden">
-        <div className="h-max">
+    <div className="relative">
+      <div className="grid grid-rows-6 gap-4 bg-white rounded-lg shadow-md p-4 w-[70vw] h-[50vh] overflow-hidden">
+        <div className="w-full row-span-4 flex items-center justify-center object-contain">
+          <img
+            loading="lazy"
+            src={img || ''}
+            alt="A service illustration"
+            className="h-full object-contain"
+          />
+        </div>
+        <div className="row-span-2">
           <p className="text-xl font-semibold">{title}</p>
           <p className="text-xs">{description}</p>
         </div>
       </div>
-      <div className="">
-        <Link className="absolute z-10 -bottom-4 right-4 font-bold bg-primary w-fit p-2 px-3 rounded-full">
-          Saber mas
-        </Link>
-      </div>
+      <Link className="absolute z-10 -bottom-4 right-4 font-bold bg-primary w-fit p-2 px-3 rounded-full shadow-md">
+        Saber mas
+      </Link>
     </div>
   );
 };
@@ -72,7 +70,7 @@ export default () => {
           <Card
             content={[
               'Jubilaciones y Pensiones',
-              'Consultoria Previsional, Jubilación Planificada, Pensión por Fallecimiento, Jubilación para Autónomos.',
+              'Consultoria Previsional, Jubilación Planificada, Pension Directa y Derivada por fallecimiento del trabajador en actividad o jubilado, Jubilacion para Autonomos.',
               'https://ouch-cdn2.icons8.com/jRHIsyUjOBImDOe5SRKWsAfqco0vWYC7k8mX3hX3FIc/rs:fit:456:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvOTYy/LzQzYTZhZjdjLWZh/OGEtNGQzOS1iYWRk/LTU0NDdmNWYyYjE2/NC5zdmc.png',
             ]}
           />
@@ -93,7 +91,7 @@ export default () => {
           <Card
             content={[
               'Divorcios, Familia y Sucesiones',
-              'Profesionales calificados para asesorar y resolver todos los asuntos de familia. Respondabilidad Parental, Cuidado Personal, Régimen de Comunicación.',
+              'Profesionales calificados para asesorar y resolver todos los asuntos de familia. Alimentos y Cese de alimentos, Responsabilidad Parental, Cuidado personal, Regimen de Comunicación.',
               'https://ouch-cdn2.icons8.com/MivVWzG8zuSAd1ynjeh5LN6EVnB-AAzSzp9W-BnTIP0/rs:fit:608:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvMzY5/L2ZhOTA5ZjFmLTMw/NDAtNDBjYy1iZjA5/LWU1MTI2NDY0MzQ5/Yy5zdmc.png',
             ]}
           />
