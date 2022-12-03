@@ -1,18 +1,24 @@
-const Card = ({ children, content }) => {
+import { Link } from 'react-router-dom';
+
+const Card = ({ content }) => {
   const [title, description, img] = content;
   return (
-    <div className="bg-white rounded-lg shadow-md p-2 w-[70vw] h-[40vh]">
-      <div className="w-full h-3/4 grid place-items-center">
+    <div className="grid grid-rows-6 gap-4 bg-white rounded-lg shadow-md p-2 w-[70vw] h-[50vh]">
+      <div className="w-full row-span-4 flex items-center justify-center object-contain">
         <img
           loading="lazy"
           src={img || ''}
           alt="A service illustration"
-          className=""
+          className="h-full object-contain"
         />
       </div>
-      <p className="text-xl font-semibold">{title}</p>
-      <p>{description}</p>
-      {children}
+      <div>
+        <p className="text-xl font-semibold">{title}</p>
+        <p>{description}</p>
+      </div>
+      <div className="flex ">
+        <Link className="">Saber mas</Link>
+      </div>
     </div>
   );
 };
@@ -26,7 +32,7 @@ export default () => {
           <Card
             content={[
               'Gestoria del Automotor',
-              'descripcion',
+              '',
               'https://ouch-cdn2.icons8.com/Bnmlrx6cZDArE-XS1CnD_GDwRbQnmeqtPc7q8fFXPNc/rs:fit:608:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNDg1/L2UwOGY0NmY5LTNh/ZTEtNDQwOC04ZDE3/LTBhZGQ1N2RlMTRk/MC5zdmc.png',
             ]}
           />
@@ -41,13 +47,37 @@ export default () => {
             content={[
               'Infracciones de Transito',
               'descripcion',
-              'https://ouch-cdn2.icons8.com/pF8qS3slldwAq-Us3f5bivFuDl2kLbz-sMPU64vYduw/rs:fit:1201:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvOTUx/LzY2OTc2NDE5LWQx/MzgtNDYwNi1hM2Zi/LTA5ZWYwMDBhZjlh/Zi5zdmc.png',
+              'https://ouch-cdn2.icons8.com/GrhMqPqiLgvZnDP-w1lk9sa0Io7ALchYrHC9BaovCbQ/rs:fit:608:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvMTY2/LzI0N2QyOWNlLTVi/ZDctNDNjZi1iZDI0/LTI4ZmYxNTc3YzNj/NS5zdmc.png',
             ]}
           />
-          <Card content={['Jubilaciones y Pensiones', 'descripcion']} />
-          <Card content={['Accidentes Laborales ART', 'descripcion']} />
-          <Card content={['Escrituracion y Usucapion', 'descripcion']} />
-          <Card content={['Divorcios, Familia y Sucesiones', 'descripcion']} />
+          <Card
+            content={[
+              'Jubilaciones y Pensiones',
+              'descripcion',
+              'https://ouch-cdn2.icons8.com/jRHIsyUjOBImDOe5SRKWsAfqco0vWYC7k8mX3hX3FIc/rs:fit:456:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvOTYy/LzQzYTZhZjdjLWZh/OGEtNGQzOS1iYWRk/LTU0NDdmNWYyYjE2/NC5zdmc.png',
+            ]}
+          />
+          <Card
+            content={[
+              'Accidentes Laborales ART',
+              'descripcion',
+              'https://ouch-cdn2.icons8.com/RyvNV1cEw8CcOq7TnzeRd1vsG2N2mLXCIJA1VdXumEA/rs:fit:608:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvODky/LzEzZjUyOWM3LWY1/NWUtNDE1ZC1hNWRj/LTQyOThhMGY3ZWVh/Mi5zdmc.png',
+            ]}
+          />
+          <Card
+            content={[
+              'Escrituracion y Usucapion',
+              'descripcion',
+              'https://ouch-cdn2.icons8.com/sSGTFBu18yzsbWJemIqQvvGflTLrpKNR2GaLCUIPi_0/rs:fit:321:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvODMv/ZWE3YjI2MmItYTgy/My00NDUwLWI5ZDct/YjFmNGQ2MWE4MzYw/LnN2Zw.png',
+            ]}
+          />
+          <Card
+            content={[
+              'Divorcios, Familia y Sucesiones',
+              'descripcion',
+              'https://ouch-cdn2.icons8.com/MivVWzG8zuSAd1ynjeh5LN6EVnB-AAzSzp9W-BnTIP0/rs:fit:608:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvMzY5/L2ZhOTA5ZjFmLTMw/NDAtNDBjYy1iZjA5/LWU1MTI2NDY0MzQ5/Yy5zdmc.png',
+            ]}
+          />
         </div>
       </div>
     </>
