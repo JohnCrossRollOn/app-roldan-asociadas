@@ -19,36 +19,29 @@ export default () => {
             <div className="flex flex-col gap-8">
               <p className="text-2xl font-semibold">Horarios de Atencion</p>
               <div>
-                <div className="flex flex-row justify-between items-baseline">
-                  <p className="text-xs">Lunes a Viernes</p>
-                  <p className="text-xl font-semibold">
-                    9 <span className="font-normal">a</span> 19hs
-                  </p>
-                </div>
+                <p className="text-xs">Lunes a Viernes</p>
                 <hr />
-                <div className="flex flex-row justify-between items-baseline">
-                  <p className="text-xs">Sabados</p>
-                  <p className="text-xl font-semibold">
-                    10 <span className="font-normal">a</span> 16hs
-                  </p>
-                </div>
+                <p className="text-xl font-semibold text-right">
+                  9 <span className="font-normal">a</span> 19hs
+                </p>
+                <p className="text-xs">Sabados</p>
                 <hr />
+                <p className="text-xl font-semibold text-right">
+                  10 <span className="font-normal">a</span> 16hs
+                </p>
               </div>
               <div className="flex flex-col">
-                <div className="flex flex-row gap-3 items-baseline justify-between">
-                  <p className="text-xs">Telefono</p>
-                  <span className="text-xl font-semibold">
-                    5253<span className="text-xs font-light">-</span>2789
-                    <span className="text-xl font-semibold font-icon">
-                      call
-                    </span>
-                  </span>
-                </div>
+                <p className="text-xs">Telefono</p>
                 <hr />
+                <span className="text-xl font-semibold gap-1 text-right">
+                  5253<span className="text-xs font-light">-</span>2789
+                  <span className="text-xl font-semibold font-icon">call</span>
+                </span>
               </div>
-              <div className="flex flex-col gap">
+              <div className="text-xs flex flex-col gap-1">
+                <span className="">Direccion del estudio</span>
                 <hr />
-                <p className="text-xs">
+                <p className="text-right font-semibold">
                   1er. Piso, Oficina 2, Esquina Av.Hipolito Yrigoyen (Ruta 197)
                   General Pacheco a metros de Panamericana Este.
                 </p>
