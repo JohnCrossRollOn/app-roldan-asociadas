@@ -1,6 +1,7 @@
 import Jumbotron from './Jumbotron';
 import Services from './Services';
 import Ourselves from './Ourselves';
+import Contact from './Contact';
 
 export default () => {
   return (
@@ -8,6 +9,7 @@ export default () => {
       <Jumbotron />
       <Services />
       <Ourselves />
+      <Contact />
     </div>
   );
 };
