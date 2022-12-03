@@ -2,6 +2,7 @@ export default () => {
   return (
     <div className="rounded-lg flex flex-col md:flex-row-reverse gap-4">
       <img
+        loading="lazy"
         src="https://res.cloudinary.com/dse7tzeho/image/upload/v1670084291/app-roldan-asociadas/Sin_t%C3%ADtulo-modified_rsyv8u.png"
         alt="Nosotros con un juez"
         className=""
