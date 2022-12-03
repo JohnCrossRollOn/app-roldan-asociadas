@@ -7,7 +7,7 @@ export default () => {
         alt="Nosotros con un juez"
         className=""
       />
-      <p className="text-[2rem] font-extrabold">
+      <p className="text-[2rem] leading-8 font-extrabold">
         Nosotros somos tu estudio de abogacia!
       </p>
       <p className="leading-relaxed tracking-wide">

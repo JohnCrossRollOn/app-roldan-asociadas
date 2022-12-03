@@ -5,21 +5,19 @@ import Hr from './Hr';
 const Card = ({ content }) => {
   const [title, description, img] = content;
   return (
-    <div className="relative">
-      <div className="grid grid-rows-6 gap-4 bg-white rounded-lg shadow-md p-4 w-[70vw] h-[50vh] overflow-hidden">
-        <div className="w-full row-span-4 flex items-center justify-center object-contain">
-          <img
-            loading="lazy"
-            src={img || ''}
-            alt="A service illustration"
-            className="h-full object-contain"
-          />
-        </div>
-        <div className="row-span-2">
-          <p className="text-xl font-semibold">{title}</p>
-          <p className="text-xs">{description}</p>
-        </div>
+    <div className="relative grid grid-rows-6 gap-4 bg-white rounded-lg shadow-md p-4 w-[70vw] h-[50vh]">
+      <div className="w-full row-span-4 flex items-center justify-center object-contain">
+        <img
+          loading="lazy"
+          src={img || ''}
+          alt="A service illustration"
+          className="h-full object-contain"
+        />
       </div>
+      <p className="text-xl font-semibold">{title}</p>
+      <p className="truncate text-xs bg-gradient-to-b from-slate-600 text-transparent bg-clip-text">
+        {description}
+      </p>
       <Link className="absolute z-10 -bottom-4 right-4 font-bold bg-primary w-fit p-2 px-3 rounded-full shadow-md">
         Saber mas
       </Link>
