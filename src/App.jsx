@@ -7,7 +7,7 @@ export default () => {
   return (
     <div className="min-h-screen bg-slate-100 text-slate-800">
       <Nav />
-      <div>
+      <div className="my-8">
         <Routes>
           <Route path="/" element={<Landing />} />
         </Routes>
