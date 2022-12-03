@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import Hr from './Hr';
+
 const Card = ({ content }) => {
   const [title, description, img] = content;
   return (
@@ -28,12 +30,7 @@ const Card = ({ content }) => {
 export default () => {
   return (
     <>
-      <div className="relative flex flex-row items-center justify-center">
-        <p className="absolute bg-slate-100 px-2 text-sm tracking-widest font-bold">
-          SERVICIOS
-        </p>
-        <hr className="bg-slate-800 w-full" />
-      </div>
+      <Hr>SERVICIOS</Hr>
       <div className="gap-4 overflow-hidden overflow-x-scroll -mx-4 scrollbar-hide">
         <div className="p-4 pt-0 pb-6 flex w-max gap-4">
           <Card
@@ -46,17 +43,14 @@ export default () => {
           <Card
             content={[
               'Accidentes de Transito',
-              <p>
-                Abogados con sólida experiencia en reclamos y daños materiales
-                contra las compañias de seguros.
-                <ul className="mx-6 list-disc">
-                  <li>Auto</li>
-                  <li>Moto</li>
-                  <li>bicicleta</li>
-                  <li>Transportados</li>
-                  <li>Peatón</li>
-                </ul>
-              </p>,
+              'Abogados con sólida experiencia en reclamos y daños materiales contra las compañias de seguros. Auto, Moto, bicicleta, Transportados y Peatón.',
+              // <ul className="mx-6 list-disc">
+              //   <li>Auto</li>
+              //   <li>Moto</li>
+              //   <li>bicicleta</li>
+              //   <li>Transportados</li>
+              //   <li>Peatón</li>
+              // </ul>
               'https://ouch-cdn2.icons8.com/SyZqggsp27ro3KjKyMY0Z6EuC1kmjCIpFSPt3l9m1l8/rs:fit:1201:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNDcy/L2Y1NTExNDYxLTcw/MzUtNGRmNS04MTY2/LWNlZTgwOWNhMTI3/Zi5zdmc.png',
             ]}
           />
