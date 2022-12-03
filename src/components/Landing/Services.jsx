@@ -16,7 +16,7 @@ const Card = ({ content }) => {
         <p className="text-xl font-semibold">{title}</p>
         <p className="text-xs">{description}</p>
       </div>
-      <Link className="absolute bottom-0 z-10 right-0 m-4 bg-primario font-bold bg-primary p-2 px-3 rounded-full">
+      <Link className="absolute bottom-0 z-10 right-0 m-2 bg-primario font-bold bg-primary border-8 border-white p-2 px-3 rounded-full">
         Saber mas
       </Link>
     </div>
