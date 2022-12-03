@@ -8,31 +8,31 @@ export default () => {
       <p className="text-sm tracking-widest font-bold">SERVICIOS</p>
       <Card>
         <img src="" />
-        <p className="">Gestoria del Automotor</p>
+        <p className="text-xl">Gestoria del Automotor</p>
       </Card>
       <Card>
         <img src="" />
-        <p className="">Accidentes de Transito</p>
+        <p className="text-xl">Accidentes de Transito</p>
       </Card>
       <Card>
         <img src="" />
-        <p className="">Infracciones de Transito</p>
+        <p className="text-xl">Infracciones de Transito</p>
       </Card>
       <Card>
         <img src="" />
-        <p className="">Jubilaciones y Pensiones</p>
+        <p className="text-xl">Jubilaciones y Pensiones</p>
       </Card>
       <Card>
         <img src="" />
-        <p className="">Accidentes Laborales ART</p>
+        <p className="text-xl">Accidentes Laborales ART</p>
       </Card>
       <Card>
         <img src="" />
-        <p className="">Escrituracion y Usucapion</p>
+        <p className="text-xl">Escrituracion y Usucapion</p>
       </Card>
       <Card>
         <img src="" />
-        <p className="">Divorcios, Familia y Sucesiones</p>
+        <p className="text-xl">Divorcios, Familia y Sucesiones</p>
       </Card>
     </div>
   );
