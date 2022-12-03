@@ -28,8 +28,10 @@ const Card = ({ content }) => {
 export default () => {
   return (
     <>
-      <div className="flex flex-row items-center justify-center">
-        <p className="w-fit text-sm tracking-widest font-bold">SERVICIOS</p>
+      <div className="relative flex flex-row items-center justify-center">
+        <p className="absolute bg-slate-100 px-2 text-sm tracking-widest font-bold">
+          SERVICIOS
+        </p>
         <hr className="bg-slate-800 w-full" />
       </div>
       <div className="gap-4 overflow-hidden overflow-x-scroll -mx-4 scrollbar-hide">
