@@ -16,9 +16,43 @@ export default () => {
       <div className="gap-4 overflow-hidden overflow-x-scroll -mx-4 scrollbar-hide">
         <div className="p-4 pt-0 pb-6 flex w-max gap-4">
           <Card>
-            <div className="flex flex-col gap-3">
-              <p className="text-xl font-semibold">Horarios de Atencion</p>
-              <p className="text-xs">Hs: 6 a 8</p>
+            <div className="flex flex-col gap-8">
+              <p className="text-2xl font-semibold">Horarios de Atencion</p>
+              <div>
+                <div className="flex flex-row justify-between items-baseline">
+                  <p className="text-xs">Lunes a Viernes</p>
+                  <p className="text-xl font-semibold">
+                    9 <span className="font-normal">a</span> 19hs
+                  </p>
+                </div>
+                <hr />
+                <div className="flex flex-row justify-between items-baseline">
+                  <p className="text-xs">Sabados</p>
+                  <p className="text-xl font-semibold">
+                    10 <span className="font-normal">a</span> 16hs
+                  </p>
+                </div>
+                <hr />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex flex-row gap-3 items-baseline justify-between">
+                  <p className="text-xs">Telefono</p>
+                  <span className="text-xl font-semibold">
+                    5253<span className="text-xs font-light">-</span>2789
+                    <span className="text-xl font-semibold font-icon">
+                      call
+                    </span>
+                  </span>
+                </div>
+                <hr />
+              </div>
+              <div className="flex flex-col gap">
+                <hr />
+                <p className="text-xs">
+                  1er. Piso, Oficina 2, Esquina Av.Hipolito Yrigoyen (Ruta 197)
+                  General Pacheco a metros de Panamericana Este.
+                </p>
+              </div>
             </div>
           </Card>
           <div className="relative bg-white rounded-lg shadow-md w-[70vw] h-[50vh]">

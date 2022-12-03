@@ -7,7 +7,7 @@ module.exports = {
         primary: '#f97316',
       },
       fontFamily: {
-        MaterialIcons: ['"icon"'],
+        icon: ['"Material Icons"'],
       },
     },
   },
