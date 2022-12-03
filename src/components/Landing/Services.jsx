@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Card = ({ content }) => {
   const [title, description, img] = content;
   return (
-    <div className="grid grid-rows-6 gap-4 bg-white rounded-lg shadow-md p-2 w-[70vw] h-[50vh]">
+    <div className="relative grid grid-rows-6 gap-4 bg-white rounded-lg shadow-md p-4 w-[70vw] h-[50vh] overflow-hidden">
       <div className="w-full row-span-4 flex items-center justify-center object-contain">
         <img
           loading="lazy"
@@ -12,13 +12,13 @@ const Card = ({ content }) => {
           className="h-full object-contain"
         />
       </div>
-      <div className="grid row-span-2 grid-rows-6">
+      <div>
         <p className="text-xl font-semibold">{title}</p>
-        <p className="row-span-4">{description}</p>
-        <div className="flex justify-end items-end">
-          <Link className="">Saber mas</Link>
-        </div>
+        <p className="text-xs">{description}</p>
       </div>
+      <Link className="absolute bottom-0 z-10 right-0 m-4 bg-primario font-bold bg-primary p-2 px-3 rounded-full">
+        Saber mas
+      </Link>
     </div>
   );
 };
@@ -32,14 +32,14 @@ export default () => {
           <Card
             content={[
               'Gestoria del Automotor',
-              '',
+              'Nuestros profesionales realizan diferentes trámites en los Registros de la Propiedad Automotor, Dirección de Rentas, Dependencias Policiales, Oficinas Municipales y Compañias de Seguros.',
               'https://ouch-cdn2.icons8.com/Bnmlrx6cZDArE-XS1CnD_GDwRbQnmeqtPc7q8fFXPNc/rs:fit:608:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNDg1/L2UwOGY0NmY5LTNh/ZTEtNDQwOC04ZDE3/LTBhZGQ1N2RlMTRk/MC5zdmc.png',
             ]}
           />
           <Card
             content={[
               'Accidentes de Transito',
-              'descripcion',
+              '',
               'https://ouch-cdn2.icons8.com/SyZqggsp27ro3KjKyMY0Z6EuC1kmjCIpFSPt3l9m1l8/rs:fit:1201:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNDcy/L2Y1NTExNDYxLTcw/MzUtNGRmNS04MTY2/LWNlZTgwOWNhMTI3/Zi5zdmc.png',
             ]}
           />
