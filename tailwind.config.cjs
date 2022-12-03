@@ -2,7 +2,14 @@
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#f97316',
+      },
+      fontFamily: {
+        MaterialIcons: ['"Material Icons"'],
+      },
+    },
   },
   plugins: [],
 };
