@@ -12,12 +12,12 @@ const Card = ({ content }) => {
           className="h-full object-contain"
         />
       </div>
-      <div>
+      <div className="grid row-span-2 grid-rows-6">
         <p className="text-xl font-semibold">{title}</p>
-        <p>{description}</p>
-      </div>
-      <div className="flex ">
-        <Link className="">Saber mas</Link>
+        <p className="row-span-4">{description}</p>
+        <div className="flex justify-end items-end">
+          <Link className="">Saber mas</Link>
+        </div>
       </div>
     </div>
   );
@@ -28,7 +28,7 @@ export default () => {
     <>
       <p className="text-sm tracking-widest font-bold ">SERVICIOS</p>
       <div className="gap-4 overflow-hidden overflow-x-scroll -mx-4 scrollbar-hide">
-        <div className="p-4 pt-0 pb-6 grid grid-cols-7 grid w-max gap-4">
+        <div className="p-4 pt-0 pb-6 flex w-max gap-4">
           <Card
             content={[
               'Gestoria del Automotor',
