@@ -14,6 +14,7 @@ export default () => {
             <strong className="font-black">"</strong>
           </p>
         </div>
+        <br />
         <p className="text-xs leading-relaxed">
           Los pilares de nuestra comunidad son algo que dijo Quique (Dr. Roldan
           Penayo) pero Gabriela Fernanda Dominguez no le tomo fotografia.
