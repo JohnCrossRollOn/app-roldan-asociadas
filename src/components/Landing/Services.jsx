@@ -73,7 +73,7 @@ export default () => {
       <div id="servicios" />
       <Slider>
         {elements.map((item, index) => (
-          <Card key={index}>
+          <Card key={index} className="sm:h-[30vh]">
             <CardContents content={item} />
           </Card>
         ))}

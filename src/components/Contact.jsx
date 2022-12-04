@@ -143,14 +143,14 @@ export default () => {
       <div id="contacto" />
       <Hr>Contactenos</Hr>
       <Slider>
-        <Card>
+        <Card className="h-fit">
           <ContactForm
             onSubmit={(e) => {
               console.log(e);
             }}
           />
         </Card>
-        <Card>
+        <Card className="min-h-fit">
           <div className="flex flex-col gap-8">
             <p className="text-2xl font-semibold">Horarios de Atencion</p>
             <div>
@@ -175,7 +175,7 @@ export default () => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        <Card>
+        <Card className="h-fit">
           <div className="flex flex-col gap-8">
             <p className="text-2xl font-semibold">Datos de contacto</p>
             <div className="flex flex-col">
