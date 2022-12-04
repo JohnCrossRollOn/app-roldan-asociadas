@@ -29,7 +29,7 @@ const ContactForm = ({ onSubmit: apply }) => {
       ...prev,
       pass:
         Object.values(prev).every((value) =>
-          value === false ? true : value !== '' && value.length > 6
+          value === false ? true : value !== '' && value.length > 2
         ) && Object.values(prev).length > 1,
     }));
     form.pass && apply(form);
