@@ -1,6 +1,6 @@
 export default () => {
   return (
-    <div className="w-full select-none rounded-lg flex flex-col gap-4 md:gap-8 md:grid md:grid-cols-2">
+    <div className="w-full select-none rounded-lg flex flex-col gap-4 md:gap-16 md:grid md:grid-cols-2">
       <img
         crossOrigin="anonymous"
         loading="lazy"
@@ -8,7 +8,7 @@ export default () => {
         alt="Nosotros con un juez"
         className=""
       />
-      <div>
+      <div className="flex flex-col gap-4">
         <p className="text-[2rem] leading-8 font-extrabold">
           Nosotros somos tu estudio de abogacia!
         </p>
