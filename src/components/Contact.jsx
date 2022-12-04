@@ -166,6 +166,23 @@ export default () => {
                 10 <span className="font-normal">a</span> 16hs
               </p>
             </div>
+            <div className="flex flex-col gap-8">
+              <p className="text-2xl font-semibold">Datos de contacto</p>
+              <div className="flex flex-col">
+                <p className="text-xs">Telefono</p>
+                <hr />
+                <span className="text-xl font-semibold gap-1 text-right">
+                  5253<span className="text-xs font-light">-</span>2789
+                  <span className="text-xl font-semibold font-icon">call</span>
+                </span>
+                <p className="text-xs">Telefono</p>
+                <hr />
+                <span className="text-xl font-semibold gap-1 text-right">
+                  5253<span className="text-xs font-light">-</span>2789
+                  <span className="text-xl font-semibold font-icon">call</span>
+                </span>
+              </div>
+            </div>
           </div>
         </Card>
         <Card className="min-h-fit md:h-[50vh] md:w-[30vw]">
@@ -175,27 +192,6 @@ export default () => {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-        </Card>
-        <Card className="min-h-fit md:h-[50vh] md:w-[30vw]">
-          <div className="flex flex-col gap-8">
-            <p className="text-2xl font-semibold">Datos de contacto</p>
-            <div className="flex flex-col">
-              <p className="text-xs">Telefono</p>
-              <hr />
-              <span className="text-xl font-semibold gap-1 text-right">
-                5253<span className="text-xs font-light">-</span>2789
-                <span className="text-xl font-semibold font-icon">call</span>
-              </span>
-            </div>
-            <div className="flex flex-col">
-              <p className="text-xs">Telefono</p>
-              <hr />
-              <span className="text-xl font-semibold gap-1 text-right">
-                5253<span className="text-xs font-light">-</span>2789
-                <span className="text-xl font-semibold font-icon">call</span>
-              </span>
-            </div>
-          </div>
         </Card>
       </Slider>
     </>
