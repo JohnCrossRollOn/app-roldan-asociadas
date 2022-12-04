@@ -24,12 +24,14 @@ export default () => {
           <br />
           <p className="">{description}</p>
         </div>
-        {questions?.map(([question, answer]) => (
-          <Collapsable>
-            <span className="font-semibold">{question}</span>
-            <span className="text-sm">{answer}</span>
-          </Collapsable>
-        ))}
+        <div className="col-span-3 grid gap-2">
+          {questions?.map(([question, answer], index) => (
+            <Collapsable key={index}>
+              <span className="font-semibold">{question}</span>
+              <span className="text-sm">{answer}</span>
+            </Collapsable>
+          ))}
+        </div>
       </div>
     </>
   );
