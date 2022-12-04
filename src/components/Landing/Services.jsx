@@ -52,23 +52,15 @@ const Card = (props) => {
         alt="A service illustration"
         className="h-full object-contain w-full h-full row-span-4 grid place-items-center"
       />
-      <p className="text-xl font-semibold leading-4">{title}</p>
-      <p className="text-xs bg-gradient-to-b from-slate-600 text-transparent bg-clip-text">
-        {description}
-      </p>
-      <Link className="font-bold bg-primary w-fit p-2 px-3 rounded-full shadow-md">
+      <div>
+        <p className="text-xl font-semibold">{title}</p>
+        <p className="text-xs bg-gradient-to-b from-slate-600 text-transparent bg-clip-text">
+          {description}
+        </p>
+      </div>
+      <Link className="row-start-7 font-bold bg-primary w-fit p-2 px-3 rounded-full shadow-md">
         Saber mas
       </Link>
-    </div>
-  );
-};
-
-const BorderWrapper = ({ children }) => {
-  return (
-    <div className="border-8 border-pink-500">
-      {[...children].map((item) => (
-        <div className="bg-pink-500 border-8 border-red-500">{item}</div>
-      ))}
     </div>
   );
 };
