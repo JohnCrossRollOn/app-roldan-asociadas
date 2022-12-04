@@ -46,7 +46,10 @@ const ContactForm = ({ onSubmit: apply }) => {
   };
   return form.pass === true ? (
     <div>
-      Formulario enviado con exito! Su consulta se le respondera en breve
+      <p className="text-2xl font-semibold">Formulario enviado con exito!</p>
+      <p className="text-xs tracking-widest">
+        Su consulta se le respondera en breve
+      </p>
     </div>
   ) : (
     <form className="flex flex-col gap-8" {...{ onChange, onSubmit }}>
@@ -77,6 +80,7 @@ const ContactForm = ({ onSubmit: apply }) => {
           className="max-h-32 h-32 w-full"
           value={form.value}
           name="value"
+          placeholder="Describa aqui su situacion o consulta. Sea conciso."
         />
         <hr />
       </div>
