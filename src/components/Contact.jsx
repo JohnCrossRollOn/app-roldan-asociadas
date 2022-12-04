@@ -61,6 +61,7 @@ const ContactForm = ({ onSubmit: apply }) => {
       .map((input) => ({ [input.id]: input.value }))
       .reduce((prev, curr) => ({ ...prev, ...curr }), {});
     delete data[''];
+    setPass(true);
     console.log(data);
   };
   return pass ? (
