@@ -8,10 +8,20 @@ const Card = ({ children }) => {
     </div>
   );
 };
-const Input = ({ type, id, form, place, label, className, options = [] }) => {
+const Input = ({
+  type,
+  id,
+  form,
+  place,
+  label,
+  className,
+  options = [],
+  onChange,
+}) => {
   const input = {
     text: (
       <input
+        onChange={onChange}
         required
         placeholder={place}
         type={type}
@@ -22,6 +32,7 @@ const Input = ({ type, id, form, place, label, className, options = [] }) => {
     ),
     textarea: (
       <textarea
+        onChange={onChange}
         required
         className={className}
         value={form[id]}
@@ -30,9 +41,9 @@ const Input = ({ type, id, form, place, label, className, options = [] }) => {
       />
     ),
     select: (
-      <select id={id} value={form[id]} required>
-        {options.map((option) => (
-          <option>{option}</option>
+      <select id={id} value={form[id]} required onChange={onChange}>
+        {options.map((option, key) => (
+          <option {...{ key }}>{option}</option>
         ))}
       </select>
     ),
@@ -40,7 +51,7 @@ const Input = ({ type, id, form, place, label, className, options = [] }) => {
   return (
     <div className={`flex flex-col`}>
       <label
-        for={id}
+        htmlFor={id}
         className="text-[10px] tracking-widest font-semibold uppercase"
       >
         {label}
@@ -56,7 +67,7 @@ const ContactForm = ({ onSubmit: apply }) => {
     name: '',
     email: '',
     phone: '',
-    type: '',
+    type: 'Gestoria del automotor',
     value: '',
   });
   const onChange = (e) => {
@@ -103,6 +114,7 @@ const ContactForm = ({ onSubmit: apply }) => {
             id: 'name',
             place: 'Como dirijirse hacia usted',
             label: 'nombre',
+            onChange,
           }}
         />
         <hr />
@@ -113,6 +125,7 @@ const ContactForm = ({ onSubmit: apply }) => {
             place: 'Le enviaremos un mensaje',
             label: 'Correo',
             type: 'email',
+            onChange,
           }}
         />
         <hr />
@@ -123,6 +136,7 @@ const ContactForm = ({ onSubmit: apply }) => {
             place: 'En caso de urgencia',
             label: 'Telefono ó celular',
             type: 'tel',
+            onChange,
           }}
         />
         <hr />
@@ -141,6 +155,7 @@ const ContactForm = ({ onSubmit: apply }) => {
               'Escrituracion y Usucapion',
               'Divorcios, Familia y Sucesiones',
             ],
+            onChange,
           }}
         />
         <hr />
@@ -152,6 +167,7 @@ const ContactForm = ({ onSubmit: apply }) => {
             label: 'Consulta',
             place: 'Sea conciso, asi lo podremos.',
             className: 'min-h-[4rem] max-h-[5rem] w-full',
+            onChange,
           }}
         />
         <hr />
