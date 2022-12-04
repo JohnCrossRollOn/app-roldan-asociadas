@@ -3,7 +3,7 @@ import Hr from './Hr';
 
 const Card = ({ children }) => {
   return (
-    <div className="relative bg-white rounded-lg shadow-md p-4 w-[70vw] h-[50vh]">
+    <div className="relative bg-white rounded-lg shadow-md p-4 w-[70vw] min-h-[50vh] h-fit">
       {children}
     </div>
   );
@@ -131,7 +131,7 @@ const ContactForm = ({ onSubmit: apply }) => {
             id: 'value',
             label: 'Consulta',
             place: 'Sea conciso, asi lo podremos ayudar.',
-            className: 'min-h-[4rem] max-h-[5rem] w-full',
+            className: 'w-full resize-none',
           }}
         />
         <hr />

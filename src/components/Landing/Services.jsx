@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import Slider from './Slider';
 
 import Hr from './Hr';
 
@@ -45,7 +45,6 @@ const Card = (props) => {
   const [title, description, img] = props.content;
   return (
     <div className="grid grid-rows-6 gap-4 bg-white rounded-lg shadow-md p-4 w-[70vw] h-[50vh]">
-      <div id={props.id} />
       <img
         loading="lazy"
         crossOrigin="anonymous"
@@ -64,17 +63,26 @@ const Card = (props) => {
   );
 };
 
+const BorderWrapper = ({ children }) => {
+  return (
+    <div className="border-8 border-pink-500">
+      {[...children].map((item) => (
+        <div className="bg-pink-500 border-8 border-red-500">{item}</div>
+      ))}
+    </div>
+  );
+};
+
 export default () => {
-  const [position, setPosition] = useState(1);
   return (
     <>
       <Hr>SERVICIOS</Hr>
       <div className="gap-4 overflow-hidden overflow-x-scroll -mx-4 scrollbar-hide scroll-smooth">
-        <div className="p-4 pt-0 pb-6 flex w-max gap-4">
+        <Slider>
           {elements.map((item, index) => (
-            <Card id={`services_card_${index}`} key={index} content={item} />
+            <Card key={index} content={item} />
           ))}
-        </div>
+        </Slider>
       </div>
     </>
   );
