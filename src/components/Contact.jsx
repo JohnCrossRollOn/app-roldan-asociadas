@@ -5,7 +5,7 @@ import Slider from './Utils/Slider';
 
 const Card = ({ children }) => {
   return (
-    <div className="relative bg-white rounded-lg shadow-md p-4 w-[70vw] min-h-[50vh] h-fit">
+    <div className="relative bg-white rounded-lg shadow-md p-4 w-[70vw] min-h-[50vh] h-full">
       {children}
     </div>
   );
@@ -64,17 +64,18 @@ const ContactForm = ({ onSubmit: apply }) => {
     setPass(true);
     console.log(data);
   };
-  return pass ? (
-    <div className="grid place-items-center h-full select-none">
+  return !pass ? (
+    <div className="relative grid place-items-start h-full select-none">
       <div>
         <p className="text-2xl font-semibold leading-5">
           Formulario enviado con exito!
         </p>
         <br />
         <p className="text-xs tracking-widest">
-          Su consulta se le respondera en breve
+          Su consulta sera respondida en breve
         </p>
-        <div className="grid place-items-center">
+        <br />
+        <div className="absolute w-full grid place-items-center">
           <p className="font-icon w-fit leading-none text-[6rem] border-8 border-green-400 rounded-full">
             done
           </p>
