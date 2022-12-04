@@ -133,7 +133,7 @@ const ContactForm = ({ onSubmit: apply }) => {
             id: 'value',
             label: 'Consulta',
             place: 'Sea conciso, asi lo podremos ayudar.',
-            className: 'w-full resize-none',
+            className: 'w-full h-full resize-y',
           }}
         />
         <hr />
@@ -142,7 +142,7 @@ const ContactForm = ({ onSubmit: apply }) => {
         <input
           type="submit"
           value="Enviar"
-          className="font-bold bg-primary w-fit p-2 px-3 rounded-full shadow-md cursor-pointer"
+          className="absolute font-bold bg-primary w-fit p-2 px-3 rounded-full shadow-md cursor-pointer right-[1rem] bottom-[1rem]"
         />
       </div>
     </form>
