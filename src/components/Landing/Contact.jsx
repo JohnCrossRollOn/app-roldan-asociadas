@@ -8,32 +8,50 @@ const Card = ({ children }) => {
     </div>
   );
 };
-const Input = ({ type = 'text', name, form, place, label, className }) => {
+const Input = ({
+  type = 'text',
+  id,
+  form,
+  place,
+  label,
+  className,
+  options = [],
+}) => {
   const input = {
     text: (
       <input
         required
         placeholder={place}
         type={type}
-        id={name}
+        id={id}
         className={className}
-        value={form[name] || ''}
+        value={form[id] || ''}
       />
     ),
     textarea: (
       <textarea
         required
         className={className}
-        value={form[name] || ''}
-        id={name}
+        value={form[id] || ''}
+        id={id}
         placeholder={place}
       />
+    ),
+    select: (
+      <select id={id} value={form[id]} required>
+        <option hidden defaultValue>
+          {label}
+        </option>
+        {options.map((option) => (
+          <option>{option}</option>
+        ))}
+      </select>
     ),
   };
   return (
     <div className={`flex flex-col`}>
       <label
-        for={name}
+        for={id}
         className="text-[10px] tracking-widest font-semibold uppercase"
       >
         {label}
@@ -93,7 +111,7 @@ const ContactForm = ({ onSubmit: apply }) => {
         <Input
           {...{
             form,
-            name: 'name',
+            id: 'name',
             place: 'Como dirijirse hacia usted',
             label: 'nombre',
           }}
@@ -102,7 +120,7 @@ const ContactForm = ({ onSubmit: apply }) => {
         <Input
           {...{
             form,
-            name: 'email',
+            id: 'email',
             place: 'Le enviaremos un mensaje',
             label: 'Correo',
           }}
@@ -111,33 +129,39 @@ const ContactForm = ({ onSubmit: apply }) => {
         <Input
           {...{
             form,
-            name: 'phone',
+            id: 'phone',
             place: 'En caso de urgencia',
             label: 'Telefono ó celular',
           }}
         />
         <hr />
-        <select id="type" value={form.type}>
-          <option hidden defaultValue>
-            Que es lo que consulta
-          </option>
-          <option>Gestoria del Automotor</option>
-          <option>Accidentes de Transito</option>
-          <option>Infracciones de Transito</option>
-          <option>Jubilaciones y Pensiones</option>
-          <option>Accidentes Laborales (ART)</option>
-          <option>Escrituracion y Usucapion</option>
-          <option>Divorcios, Familia y Sucesiones</option>
-        </select>
+        <Input
+          {...{
+            form,
+            type: 'select',
+            id: 'type',
+            label: 'Area',
+            place: 'Categoria de su consulta',
+            options: [
+              'Gestoria del Automotor',
+              'Accidentes de Transito',
+              'Infracciones de Transito',
+              'Jubilaciones y Pensiones',
+              'Accidentes Laborales (ART)',
+              'Escrituracion y Usucapion',
+              'Divorcios, Familia y Sucesiones',
+            ],
+          }}
+        />
         <hr />
         <Input
           {...{
             form,
             type: 'textarea',
-            name: 'value',
+            id: 'value',
             label: 'Consulta',
             place: 'Sea conciso, asi lo podremos.',
-            className: 'max-h-24 h-32 w-full',
+            className: 'min-h-[4rem] max-h-[8rem] w-full',
           }}
         />
         <hr />
@@ -160,13 +184,13 @@ export default () => {
       <Hr>Contactenos</Hr>
       <div className="gap-4 overflow-hidden overflow-x-scroll -mx-4 scrollbar-hide">
         <div className="p-4 pt-0 pb-6 flex w-max gap-4">
-          <Card>
+          <div className="relative bg-white rounded-lg shadow-md p-4 w-[70vw] min-h-[50vh] h-fit">
             <ContactForm
               onSubmit={(e) => {
                 console.log(e);
               }}
             />
-          </Card>
+          </div>
           <Card>
             <div className="flex flex-col gap-8">
               <p className="text-2xl font-semibold">Horarios de Atencion</p>
