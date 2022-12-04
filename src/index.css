@@ -12,6 +12,7 @@
       sans-serif;
     height: 0;
     scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
   }
 }
 

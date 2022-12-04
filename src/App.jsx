@@ -7,7 +7,7 @@ import Contact from './components/Contact';
 
 export default () => {
   return (
-    <div className="min-h-screen bg-slate-100 text-slate-800">
+    <div className="min-h-screen bg-slate-100 text-slate-800 ">
       <Nav />
       <div className="py-8 grid grid-auto-cols gap-8 p-4 sm:p-8 md:p-16 lg:p-32 xl:p-64">
         <Routes>
