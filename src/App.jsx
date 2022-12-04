@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Nav from './components/Nav';
 import Landing from './components/Landing';
-import MoreInfo from './components/MoreInfo';
+import Info from './components/Info';
 import Contact from './components/Contact';
 
 export default () => {
@@ -12,7 +12,7 @@ export default () => {
       <div className="py-8 grid grid-auto-cols gap-8 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64">
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/masInfo/:area" element={<MoreInfo />} />
+          <Route path="/:area" element={<Info />} />
         </Routes>
         <Contact />
       </div>
