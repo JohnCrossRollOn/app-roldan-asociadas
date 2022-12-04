@@ -5,7 +5,7 @@ const Carousel = ({ children }) => {
   const maxScrollWidth = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const carousel = useRef(null);
-  console.log(maxScrollWidth?.current / carousel.current?.offsetWidth);
+  const child = useRef(0);
 
   const movePrev = () => {
     if (currentIndex > 0) {
@@ -38,14 +38,12 @@ const Carousel = ({ children }) => {
 
   useEffect(() => {
     if (carousel !== null && carousel.current !== null) {
-      carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex;
+      carousel.current.scrollLeft = child.current.offsetWidth * currentIndex;
     }
   }, [currentIndex]);
 
   useEffect(() => {
-    maxScrollWidth.current = carousel.current
-      ? carousel.current.scrollWidth - carousel.current.offsetWidth
-      : 0;
+    maxScrollWidth.current = carousel.current.scrollWidth;
   }, []);
 
   return (
@@ -55,7 +53,11 @@ const Carousel = ({ children }) => {
         className="flex flex-row gap-4 scrollbar-hide overflow-x-scroll p-4 scroll-smooth snap-x snap-mandatory touch-pan-x"
       >
         {[...children].map((item, index) => (
-          <div key={index} className="snap-center snap-normal">
+          <div
+            key={index}
+            ref={index ? null : child}
+            className="snap-center snap-normal"
+          >
             {item}
           </div>
         ))}
