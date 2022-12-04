@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Slider from '../Utils/Slider';
 
 import Hr from '../Utils/Hr';
+import Card from '../Utils/Card';
 
 const elements = [
   [
@@ -41,16 +42,16 @@ const elements = [
   ],
 ];
 
-const Card = (props) => {
+const CardContents = (props) => {
   const [title, description, img] = props.content;
   return (
-    <div className="grid grid-rows-6 gap-4 bg-white rounded-lg shadow-md p-4 w-[70vw] h-[50vh]">
+    <div>
       <img
         loading="lazy"
         crossOrigin="anonymous"
         src={img || ''}
         alt="A service illustration"
-        className="h-full object-contain w-full h-full row-span-4 grid place-items-center"
+        className="h-[10rem] object-contain w-full"
       />
       <div>
         <p className="text-xl font-semibold">{title}</p>
@@ -58,7 +59,7 @@ const Card = (props) => {
           {description}
         </p>
       </div>
-      <Link className="row-start-7 font-bold bg-primary w-fit p-2 px-3 rounded-full shadow-md">
+      <Link className="absolute bottom-[1rem] flex justify-center font-bold bg-primary w-fit p-2 px-3 rounded-full shadow-md">
         Saber mas
       </Link>
     </div>
@@ -71,7 +72,9 @@ export default () => {
       <Hr>SERVICIOS</Hr>
       <Slider>
         {elements.map((item, index) => (
-          <Card key={index} content={item} />
+          <Card key={index}>
+            <CardContents content={item} />
+          </Card>
         ))}
       </Slider>
     </>

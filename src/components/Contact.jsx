@@ -2,14 +2,8 @@ import { useState } from 'react';
 
 import Hr from './Utils/Hr';
 import Slider from './Utils/Slider';
+import Card from './Utils/Card';
 
-const Card = ({ children }) => {
-  return (
-    <div className="relative bg-white rounded-lg shadow-md p-4 w-[70vw] min-h-[50vh] h-full">
-      {children}
-    </div>
-  );
-};
 const Input = ({ type, id, place, label, className, options = [] }) => {
   const input = {
     text: (
