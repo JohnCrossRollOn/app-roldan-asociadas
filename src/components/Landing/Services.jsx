@@ -70,6 +70,7 @@ export default () => {
   return (
     <>
       <Hr>SERVICIOS</Hr>
+      <div id="servicios" />
       <Slider>
         {elements.map((item, index) => (
           <Card key={index}>
