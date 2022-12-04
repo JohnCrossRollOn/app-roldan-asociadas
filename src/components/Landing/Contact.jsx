@@ -12,6 +12,7 @@ const Input = ({ type = 'text', name, form, place, label, className }) => {
   const input = {
     text: (
       <input
+        required
         placeholder={place}
         type={type}
         id={name}
@@ -21,6 +22,7 @@ const Input = ({ type = 'text', name, form, place, label, className }) => {
     ),
     textarea: (
       <textarea
+        required
         className={className}
         value={form[name] || ''}
         id={name}
@@ -29,8 +31,11 @@ const Input = ({ type = 'text', name, form, place, label, className }) => {
     ),
   };
   return (
-    <div>
-      <label for={name} className={`text-xs uppercase ${className}`}>
+    <div className={`flex flex-col`}>
+      <label
+        for={name}
+        className="text-[10px] tracking-widest font-semibold uppercase"
+      >
         {label}
       </label>
       {input[type]}
@@ -65,24 +70,51 @@ const ContactForm = ({ onSubmit: apply }) => {
     }
   };
   return form.pass === true ? (
-    <div>
-      <p className="text-2xl font-semibold">Formulario enviado con exito!</p>
-      <p className="text-xs tracking-widest">
-        Su consulta se le respondera en breve
-      </p>
+    <div className="grid place-items-center h-full select-none">
+      <div>
+        <p className="text-2xl font-semibold leading-5">
+          Formulario enviado con exito!
+        </p>
+        <br />
+        <p className="text-xs tracking-widest">
+          Su consulta se le respondera en breve
+        </p>
+        <div className="grid place-items-center">
+          <p className="font-icon w-fit leading-none text-[6rem] border-8 border-green-400 rounded-full">
+            done
+          </p>
+        </div>
+      </div>
     </div>
   ) : (
     <form className="flex flex-col gap-8" {...{ onChange, onSubmit }}>
       <p className="text-2xl font-semibold">Evienos su consulta</p>
       <div className="flex flex-col gap-1">
         <Input
-          {...{ form, name: 'name', place: 'Su nombre', label: 'nombre' }}
+          {...{
+            form,
+            name: 'name',
+            place: 'Como dirijirse hacia usted',
+            label: 'nombre',
+          }}
         />
         <hr />
-        <Input {...{ form, name: 'email', place: 'Su correo' }} />
+        <Input
+          {...{
+            form,
+            name: 'email',
+            place: 'Le enviaremos un mensaje',
+            label: 'Correo',
+          }}
+        />
         <hr />
         <Input
-          {...{ form, name: 'phone', place: 'Numero telefonico de contacto' }}
+          {...{
+            form,
+            name: 'phone',
+            place: 'En caso de urgencia',
+            label: 'Telefono ó celular',
+          }}
         />
         <hr />
         <select id="type" value={form.type}>
@@ -98,15 +130,16 @@ const ContactForm = ({ onSubmit: apply }) => {
           <option>Divorcios, Familia y Sucesiones</option>
         </select>
         <hr />
-        <label for="value" className="text-xs">
-          Consulta
-          <textarea
-            className="max-h-32 h-32 w-full"
-            value={form.value}
-            id="value"
-            placeholder="Describa aqui su situacion o consulta. Sea conciso."
-          />
-        </label>
+        <Input
+          {...{
+            form,
+            type: 'textarea',
+            name: 'value',
+            label: 'Consulta',
+            place: 'Sea conciso, asi lo podremos.',
+            className: 'max-h-24 h-32 w-full',
+          }}
+        />
         <hr />
       </div>
       <div className="w-full grid place-items-end">

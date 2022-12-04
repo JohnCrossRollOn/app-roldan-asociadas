@@ -1,6 +1,6 @@
 export default () => {
   return (
-    <div className="w-full rounded-lg flex flex-col md:flex-row-reverse gap-4">
+    <div className="w-full select-none rounded-lg flex flex-col md:flex-row-reverse gap-4">
       <img
         crossOrigin="anonymous"
         loading="lazy"
