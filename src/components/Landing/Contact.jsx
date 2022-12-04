@@ -32,16 +32,13 @@ const Input = ({
       <textarea
         required
         className={className}
-        value={form[id] || ''}
+        value={form[id]}
         id={id}
         placeholder={place}
       />
     ),
     select: (
       <select id={id} value={form[id]} required>
-        <option hidden defaultValue>
-          {label}
-        </option>
         {options.map((option) => (
           <option>{option}</option>
         ))}
@@ -141,7 +138,6 @@ const ContactForm = ({ onSubmit: apply }) => {
             type: 'select',
             id: 'type',
             label: 'Area',
-            place: 'Categoria de su consulta',
             options: [
               'Gestoria del Automotor',
               'Accidentes de Transito',
@@ -161,7 +157,7 @@ const ContactForm = ({ onSubmit: apply }) => {
             id: 'value',
             label: 'Consulta',
             place: 'Sea conciso, asi lo podremos.',
-            className: 'min-h-[4rem] max-h-[8rem] w-full',
+            className: 'min-h-[4rem] max-h-[5rem] w-full',
           }}
         />
         <hr />
@@ -184,13 +180,13 @@ export default () => {
       <Hr>Contactenos</Hr>
       <div className="gap-4 overflow-hidden overflow-x-scroll -mx-4 scrollbar-hide">
         <div className="p-4 pt-0 pb-6 flex w-max gap-4">
-          <div className="relative bg-white rounded-lg shadow-md p-4 w-[70vw] min-h-[50vh] h-fit">
+          <Card>
             <ContactForm
               onSubmit={(e) => {
                 console.log(e);
               }}
             />
-          </div>
+          </Card>
           <Card>
             <div className="flex flex-col gap-8">
               <p className="text-2xl font-semibold">Horarios de Atencion</p>
