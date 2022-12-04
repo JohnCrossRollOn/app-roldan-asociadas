@@ -3,6 +3,7 @@ import Hr from '../Utils/Hr';
 export default () => {
   return (
     <>
+      <div />
       <Hr>Nosotros</Hr>
       <div id="nosotros" />
       <div className="flex flex-col gap-4">

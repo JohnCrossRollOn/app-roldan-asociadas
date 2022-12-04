@@ -140,8 +140,9 @@ const ContactForm = ({ onSubmit: apply }) => {
 export default () => {
   return (
     <>
-      <div id="contacto" />
+      <div />
       <Hr>Contactenos</Hr>
+      <div id="contacto" />
       <Slider>
         <Card className="min-h-fit md:h-[50vh] md:w-[30vw]">
           <ContactForm

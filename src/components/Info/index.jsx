@@ -26,8 +26,8 @@ export default () => {
         </div>
         {questions?.map(([question, answer]) => (
           <Collapsable>
-            <span>{question}</span>
-            <span>{answer}</span>
+            <span className="font-semibold">{question}</span>
+            <span className="text-sm">{answer}</span>
           </Collapsable>
         ))}
       </div>

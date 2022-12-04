@@ -35,6 +35,7 @@ const CardContents = (props) => {
 export default () => {
   return (
     <>
+      <div />
       <Hr>SERVICIOS</Hr>
       <div id="servicios" />
       <Slider>
