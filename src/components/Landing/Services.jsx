@@ -77,13 +77,11 @@ export default () => {
   return (
     <>
       <Hr>SERVICIOS</Hr>
-      <div className="gap-4 overflow-hidden overflow-x-scroll -mx-4 scrollbar-hide scroll-smooth">
-        <Slider>
-          {elements.map((item, index) => (
-            <Card key={index} content={item} />
-          ))}
-        </Slider>
-      </div>
+      <Slider>
+        {elements.map((item, index) => (
+          <Card key={index} content={item} />
+        ))}
+      </Slider>
     </>
   );
 };

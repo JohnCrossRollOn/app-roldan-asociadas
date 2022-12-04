@@ -47,13 +47,13 @@ const Carousel = ({ children }) => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="overflow-hidden -m-4">
       <div
         ref={carousel}
-        className="flex gap-4 scrollbar-hide overflow-x-scroll scroll-smooth snap-x snap-mandatory touch-pan-x z-0 p-4"
+        className="flex flex-row gap-4 scrollbar-hide overflow-x-scroll p-4 scroll-smooth snap-x snap-mandatory touch-pan-x"
       >
         {[...children].map((item, index) => (
-          <div key={index} className="snap-center">
+          <div key={index} className="snap-center snap-always">
             {item}
           </div>
         ))}
