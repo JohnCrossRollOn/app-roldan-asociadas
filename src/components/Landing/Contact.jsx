@@ -30,22 +30,6 @@ export default () => {
                   10 <span className="font-normal">a</span> 16hs
                 </p>
               </div>
-              <div className="flex flex-col">
-                <p className="text-xs">Telefono</p>
-                <hr />
-                <span className="text-xl font-semibold gap-1 text-right">
-                  5253<span className="text-xs font-light">-</span>2789
-                  <span className="text-xl font-semibold font-icon">call</span>
-                </span>
-              </div>
-              <div className="text-xs flex flex-col gap-1">
-                <span className="">Direccion del estudio</span>
-                <hr />
-                <p className="text-right font-semibold">
-                  1er. Piso, Oficina 2, Esquina Av.Hipolito Yrigoyen (Ruta 197)
-                  General Pacheco a metros de Panamericana Este.
-                </p>
-              </div>
             </div>
           </Card>
           <div className="relative bg-white rounded-lg shadow-md w-[70vw] h-[50vh]">
@@ -56,6 +40,25 @@ export default () => {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
+          <Card>
+            <p className="text-2xl"></p>
+            <div className="flex flex-col">
+              <p className="text-xs">Telefono</p>
+              <hr />
+              <span className="text-xl font-semibold gap-1 text-right">
+                5253<span className="text-xs font-light">-</span>2789
+                <span className="text-xl font-semibold font-icon">call</span>
+              </span>
+            </div>
+            <div className="text-xs flex flex-col gap-1">
+              <span className="">Direccion del estudio</span>
+              <hr />
+              <p className="text-right font-semibold">
+                1er. Piso, Oficina 2, Esquina Av.Hipolito Yrigoyen (Ruta 197)
+                General Pacheco a metros de Panamericana Este.
+              </p>
+            </div>
+          </Card>
         </div>
       </div>
     </>
