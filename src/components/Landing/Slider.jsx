@@ -5,7 +5,8 @@ const Carousel = ({ children }) => {
   const maxScrollWidth = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const carousel = useRef(null);
-  console.log(currentIndex);
+  console.log(maxScrollWidth?.current / carousel.current?.offsetWidth);
+
   const movePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex((prevState) => prevState - 1);
