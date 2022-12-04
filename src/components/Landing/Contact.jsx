@@ -8,8 +8,14 @@ const Card = ({ children }) => {
     </div>
   );
 };
-const Input = ({ name, form }) => (
-  <input type="text" name={name} value={form[name] || ''} />
+const Input = ({ name, form, place, className }) => (
+  <input
+    placeholder={place}
+    type="text"
+    name={name}
+    className={className}
+    value={form[name] || ''}
+  />
 );
 
 const ContactForm = ({ onSubmit: apply }) => {
@@ -31,18 +37,30 @@ const ContactForm = ({ onSubmit: apply }) => {
   return (
     <form className="flex flex-col gap-8" {...{ onChange, onSubmit }}>
       <p className="text-2xl font-semibold">Evienos su consulta</p>
-      <div className="flex flex-col">
-        <p className="text-xs">Su nombre</p>
+      <div className="flex flex-col gap-1">
+        <Input {...{ form, name: 'name', place: 'Su nombre' }} />
         <hr />
-        <Input {...{ form, name: 'name' }} />
+        <Input {...{ form, name: 'email', place: 'Su correo' }} />
+        <hr />
+        <Input
+          {...{ form, name: 'phone', place: 'Numero telefonico de contacto' }}
+        />
+        <hr />
+        <Input {...{ form, name: 'type', place: 'Tipo de consulta' }} />
+        <hr />
+        <textarea
+          className="max-h-32 h-32 w-full"
+          value={form.value}
+          name="value"
+        />
+        <hr />
       </div>
-      <div className="flex flex-col">
-        <p className="text-xs">Telefono</p>
-        <hr />
-        <span className="text-xl font-semibold gap-1 text-right">
-          5253<span className="text-xs font-light">-</span>2789
-          <span className="text-xl font-semibold font-icon">call</span>
-        </span>
+      <div className="w-full grid place-items-end">
+        <input
+          type="submit"
+          value="Enviar"
+          className="font-bold bg-primary w-fit p-2 px-3 rounded-full shadow-md"
+        />
       </div>
     </form>
   );
