@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-import { current } from 'tailwindcss/colors';
 
 const Carousel = ({ children }) => {
   const maxScrollWidth = useRef(0);
@@ -47,7 +46,7 @@ const Carousel = ({ children }) => {
   }, []);
 
   return (
-    <div className="overflow-hidden -m-4">
+    <div className="overflow-x-hidden -m-4">
       <div
         ref={carousel}
         className="flex flex-row gap-4 scrollbar-hide overflow-x-scroll p-4 scroll-smooth snap-x snap-mandatory touch-pan-x"
