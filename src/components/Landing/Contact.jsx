@@ -8,15 +8,7 @@ const Card = ({ children }) => {
     </div>
   );
 };
-const Input = ({
-  type = 'text',
-  id,
-  form,
-  place,
-  label,
-  className,
-  options = [],
-}) => {
+const Input = ({ type, id, form, place, label, className, options = [] }) => {
   const input = {
     text: (
       <input
@@ -53,7 +45,7 @@ const Input = ({
       >
         {label}
       </label>
-      {input[type]}
+      {input[type] ? input[type] : input.text}
     </div>
   );
 };
@@ -120,6 +112,7 @@ const ContactForm = ({ onSubmit: apply }) => {
             id: 'email',
             place: 'Le enviaremos un mensaje',
             label: 'Correo',
+            type: 'email',
           }}
         />
         <hr />
@@ -129,6 +122,7 @@ const ContactForm = ({ onSubmit: apply }) => {
             id: 'phone',
             place: 'En caso de urgencia',
             label: 'Telefono ó celular',
+            type: 'tel',
           }}
         />
         <hr />
