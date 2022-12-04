@@ -3,6 +3,20 @@ export default [
     'Gestoria del Automotor',
     'Nuestros profesionales realizan diferentes trámites en los Registros de la Propiedad Automotor, Dirección de Rentas, Dependencias Policiales, Oficinas Municipales y Compañias de Seguros.',
     'https://ouch-cdn2.icons8.com/Bnmlrx6cZDArE-XS1CnD_GDwRbQnmeqtPc7q8fFXPNc/rs:fit:608:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNDg1/L2UwOGY0NmY5LTNh/ZTEtNDQwOC04ZDE3/LTBhZGQ1N2RlMTRk/MC5zdmc.png',
+    [
+      [
+        'Esto es una pregunta???',
+        'si, y esto es una respuesta. Ingenioso verdad?',
+      ],
+      [
+        'Esto es una pregunta???',
+        'si, y esto es una respuesta. Ingenioso verdad?',
+      ],
+      [
+        'Esto es una pregunta???',
+        'si, y esto es una respuesta. Ingenioso verdad?',
+      ],
+    ],
   ],
   [
     'Accidentes de Transito',

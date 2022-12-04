@@ -10,7 +10,9 @@ export default ({ children }) => {
     >
       <div className="flex flex-row justify-between select-none">
         {[...children][0]}
-        <span className="font-icon">expand_more</span>
+        <span className="font-icon">
+          {collapsed ? 'expand_less' : 'expand_more'}
+        </span>
       </div>
       {collapsed && [...children].slice(1)}
     </div>
