@@ -8,15 +8,35 @@ const Card = ({ children }) => {
     </div>
   );
 };
-const Input = ({ name, form, place, className }) => (
-  <input
-    placeholder={place}
-    type="text"
-    name={name}
-    className={className}
-    value={form[name] || ''}
-  />
-);
+const Input = ({ type = 'text', name, form, place, label, className }) => {
+  const input = {
+    text: (
+      <input
+        placeholder={place}
+        type={type}
+        id={name}
+        className={className}
+        value={form[name] || ''}
+      />
+    ),
+    textarea: (
+      <textarea
+        className={className}
+        value={form[name] || ''}
+        id={name}
+        placeholder={place}
+      />
+    ),
+  };
+  return (
+    <div>
+      <label for={name} className={`text-xs uppercase ${className}`}>
+        {label}
+      </label>
+      {input[type]}
+    </div>
+  );
+};
 
 const ContactForm = ({ onSubmit: apply }) => {
   const [form, setForm] = useState({
@@ -28,7 +48,7 @@ const ContactForm = ({ onSubmit: apply }) => {
     value: '',
   });
   const onChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setForm((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
   const onSubmit = (e) => {
     e.preventDefault();
@@ -55,7 +75,9 @@ const ContactForm = ({ onSubmit: apply }) => {
     <form className="flex flex-col gap-8" {...{ onChange, onSubmit }}>
       <p className="text-2xl font-semibold">Evienos su consulta</p>
       <div className="flex flex-col gap-1">
-        <Input {...{ form, name: 'name', place: 'Su nombre' }} />
+        <Input
+          {...{ form, name: 'name', place: 'Su nombre', label: 'nombre' }}
+        />
         <hr />
         <Input {...{ form, name: 'email', place: 'Su correo' }} />
         <hr />
@@ -63,7 +85,7 @@ const ContactForm = ({ onSubmit: apply }) => {
           {...{ form, name: 'phone', place: 'Numero telefonico de contacto' }}
         />
         <hr />
-        <select name="type" value={form.type}>
+        <select id="type" value={form.type}>
           <option hidden defaultValue>
             Que es lo que consulta
           </option>
@@ -76,19 +98,22 @@ const ContactForm = ({ onSubmit: apply }) => {
           <option>Divorcios, Familia y Sucesiones</option>
         </select>
         <hr />
-        <textarea
-          className="max-h-32 h-32 w-full"
-          value={form.value}
-          name="value"
-          placeholder="Describa aqui su situacion o consulta. Sea conciso."
-        />
+        <label for="value" className="text-xs">
+          Consulta
+          <textarea
+            className="max-h-32 h-32 w-full"
+            value={form.value}
+            id="value"
+            placeholder="Describa aqui su situacion o consulta. Sea conciso."
+          />
+        </label>
         <hr />
       </div>
       <div className="w-full grid place-items-end">
         <input
           type="submit"
           value="Enviar"
-          className="font-bold bg-primary w-fit p-2 px-3 rounded-full shadow-md"
+          className="font-bold bg-primary w-fit p-2 px-3 rounded-full shadow-md cursor-pointer"
         />
       </div>
     </form>
