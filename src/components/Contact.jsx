@@ -10,15 +10,7 @@ const Card = ({ children }) => {
     </div>
   );
 };
-const Input = ({
-  type,
-  id,
-  place,
-  label,
-  className,
-  options = [],
-  onChange,
-}) => {
+const Input = ({ type, id, place, label, className, options = [] }) => {
   const input = {
     text: (
       <input
@@ -62,9 +54,9 @@ const ContactForm = ({ onSubmit: apply }) => {
       .reduce((prev, curr) => ({ ...prev, ...curr }), {});
     delete data[''];
     setPass(true);
-    console.log(data);
+    apply(data);
   };
-  return !pass ? (
+  return pass ? (
     <div className="relative grid place-items-start h-full select-none">
       <div>
         <p className="text-2xl font-semibold leading-5">
