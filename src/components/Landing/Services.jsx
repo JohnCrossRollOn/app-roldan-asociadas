@@ -44,10 +44,8 @@ const elements = [
 const Card = (props) => {
   const [title, description, img] = props.content;
   return (
-    <div
-      {...props}
-      className="grid grid-rows-6 gap-4 bg-white rounded-lg shadow-md p-4 w-[70vw] h-[50vh]"
-    >
+    <div className="grid grid-rows-6 gap-4 bg-white rounded-lg shadow-md p-4 w-[70vw] h-[50vh]">
+      <div id={props.id} />
       <img
         loading="lazy"
         crossOrigin="anonymous"
@@ -71,14 +69,6 @@ export default () => {
   return (
     <>
       <Hr>SERVICIOS</Hr>
-      <a
-        href={`#services_card_${position}`}
-        onClick={() => {
-          setPosition(position + 1);
-        }}
-      >
-        Next
-      </a>
       <div className="gap-4 overflow-hidden overflow-x-scroll -mx-4 scrollbar-hide scroll-smooth">
         <div className="p-4 pt-0 pb-6 flex w-max gap-4">
           {elements.map((item, index) => (
