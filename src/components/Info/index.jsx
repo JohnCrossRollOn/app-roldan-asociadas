@@ -11,11 +11,11 @@ export default () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="flex flex-col md:flex-row gap-4 items-center">
         <img
           loading="lazy"
           crossOrigin="anonymous"
-          src={img || ''}
+          src={img}
           alt="A service illustration"
           className="h-full w-full object-contain"
         />
@@ -24,14 +24,14 @@ export default () => {
           <br />
           <p className="">{description}</p>
         </div>
-        <div className="col-span-3 grid gap-2">
-          {questions?.map(([question, answer], index) => (
-            <Collapsable key={index}>
-              <span className="font-semibold">{question}</span>
-              <span className="text-sm">{answer}</span>
-            </Collapsable>
-          ))}
-        </div>
+      </div>
+      <div className="grid gap-2">
+        {questions?.map(([question, answer], index) => (
+          <Collapsable key={index}>
+            <span className="font-semibold">{question}</span>
+            <span className="text-sm">{answer}</span>
+          </Collapsable>
+        ))}
       </div>
     </>
   );
