@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Hr from './Hr';
 
 const Card = ({ children }) => {
@@ -5,6 +6,45 @@ const Card = ({ children }) => {
     <div className="relative bg-white rounded-lg shadow-md p-4 w-[70vw] h-[50vh]">
       {children}
     </div>
+  );
+};
+const Input = ({ name, form }) => (
+  <input type="text" name={name} value={form[name] || ''} />
+);
+
+const ContactForm = ({ onSubmit: apply }) => {
+  const [form, setForm] = useState({ pass: false });
+  const onChange = (e) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setForm((prev) => ({
+      ...prev,
+      pass:
+        Object.values(prev).every((value) =>
+          value === false ? true : value !== '' && value.length > 6
+        ) && Object.values(prev).length > 1,
+    }));
+    form.pass && apply(form);
+  };
+  return (
+    <form className="flex flex-col gap-8" {...{ onChange, onSubmit }}>
+      <p className="text-2xl font-semibold">Evienos su consulta</p>
+      <div className="flex flex-col">
+        <p className="text-xs">Su nombre</p>
+        <hr />
+        <Input {...{ form, name: 'name' }} />
+      </div>
+      <div className="flex flex-col">
+        <p className="text-xs">Telefono</p>
+        <hr />
+        <span className="text-xl font-semibold gap-1 text-right">
+          5253<span className="text-xs font-light">-</span>2789
+          <span className="text-xl font-semibold font-icon">call</span>
+        </span>
+      </div>
+    </form>
   );
 };
 
@@ -16,24 +56,11 @@ export default () => {
       <div className="gap-4 overflow-hidden overflow-x-scroll -mx-4 scrollbar-hide">
         <div className="p-4 pt-0 pb-6 flex w-max gap-4">
           <Card>
-            <div className="flex flex-col gap-8">
-              <p className="text-2xl font-semibold">Evienos su consulta</p>
-              <div className="flex flex-col">
-                <p className="text-xs">Su nombre</p>
-                <hr />
-                <span className="text-xl font-semibold gap-1">
-                  <input type="text" className="w-16" />
-                </span>
-              </div>
-              <div className="flex flex-col">
-                <p className="text-xs">Telefono</p>
-                <hr />
-                <span className="text-xl font-semibold gap-1 text-right">
-                  5253<span className="text-xs font-light">-</span>2789
-                  <span className="text-xl font-semibold font-icon">call</span>
-                </span>
-              </div>
-            </div>
+            <ContactForm
+              onSubmit={(e) => {
+                console.log(e);
+              }}
+            />
           </Card>
           <Card>
             <div className="flex flex-col gap-8">
