@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import Slider from './Slider';
+import Slider from '../Utils/Slider';
 
-import Hr from './Hr';
+import Hr from '../Utils/Hr';
 
 const elements = [
   [

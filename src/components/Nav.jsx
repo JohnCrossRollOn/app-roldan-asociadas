@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Logo from './Logo';
+import Logo from './Utils/Logo';
 
 export default () => (
   <nav className="flex bg-white gap-4 text-lg py-2 px-4 md:px-16 shadow-md sticky top-0 items-center select-none rounded-b-xl z-50 justify-between">

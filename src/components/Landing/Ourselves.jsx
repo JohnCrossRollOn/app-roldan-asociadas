@@ -1,4 +1,4 @@
-import Hr from './Hr';
+import Hr from '../Utils/Hr';
 
 export default () => {
   return (
