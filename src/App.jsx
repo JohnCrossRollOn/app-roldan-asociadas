@@ -5,7 +5,7 @@ import Landing from './components/Landing';
 
 export default () => {
   return (
-    <div className="min-h-screen w-screen bg-slate-100 text-slate-800">
+    <div className="min-h-screen bg-slate-100 text-slate-800">
       <Nav />
       <div className="my-8">
         <Routes>

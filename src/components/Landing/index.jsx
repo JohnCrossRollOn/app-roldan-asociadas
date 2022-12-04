@@ -5,7 +5,7 @@ import Contact from './Contact';
 
 export default () => {
   return (
-    <div className="grid grid-auto-cols gap-8 p-4 ">
+    <div className="grid grid-auto-cols gap-8 p-4">
       <Jumbotron />
       <Services />
       <Ourselves />
