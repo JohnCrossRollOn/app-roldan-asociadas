@@ -1,7 +1,7 @@
 import Logo from './Logo';
 
 export default () => (
-  <nav className="flex w-full bg-white gap-4 text-lg py-2 px-4 md:px-16 shadow-md sticky top-0 items-center select-none rounded-b-xl z-50 justify-between">
+  <nav className="flex bg-white gap-4 text-lg py-2 px-4 md:px-16 shadow-md stsicky top-0 items-center select-none rounded-b-xl z-50 justify-between">
     <div className="flex flex-row gap-4 text-xl font-semibold items-center">
       <Logo className="h-8" />
       <span className="">

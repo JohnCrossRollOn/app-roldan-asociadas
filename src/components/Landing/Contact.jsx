@@ -17,6 +17,26 @@ export default () => {
         <div className="p-4 pt-0 pb-6 flex w-max gap-4">
           <Card>
             <div className="flex flex-col gap-8">
+              <p className="text-2xl font-semibold">Evienos su consulta</p>
+              <div className="flex flex-col">
+                <p className="text-xs">Su nombre</p>
+                <hr />
+                <span className="text-xl font-semibold gap-1">
+                  <input type="text" className="w-16" />
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <p className="text-xs">Telefono</p>
+                <hr />
+                <span className="text-xl font-semibold gap-1 text-right">
+                  5253<span className="text-xs font-light">-</span>2789
+                  <span className="text-xl font-semibold font-icon">call</span>
+                </span>
+              </div>
+            </div>
+          </Card>
+          <Card>
+            <div className="flex flex-col gap-8">
               <p className="text-2xl font-semibold">Horarios de Atencion</p>
               <div>
                 <p className="text-xs">Lunes a Viernes</p>
