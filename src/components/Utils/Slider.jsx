@@ -27,7 +27,9 @@ const Carousel = ({ children }) => {
     }
 
     if (direction === 'next' && carousel.current !== null) {
-      return child.current.offsetWidth * currentIndex >= maxScrollWidth.current;
+      return (
+        child.current.offsetWidth * (currentIndex + 1) >= maxScrollWidth.current
+      );
     }
 
     return false;
