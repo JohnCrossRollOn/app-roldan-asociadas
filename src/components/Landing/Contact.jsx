@@ -21,27 +21,18 @@ const Input = ({
   const input = {
     text: (
       <input
-        onChange={onChange}
         required
         placeholder={place}
         type={type}
         id={id}
         className={className}
-        value={form[id] || ''}
       />
     ),
     textarea: (
-      <textarea
-        onChange={onChange}
-        required
-        className={className}
-        value={form[id]}
-        id={id}
-        placeholder={place}
-      />
+      <textarea required className={className} id={id} placeholder={place} />
     ),
     select: (
-      <select id={id} value={form[id]} required onChange={onChange}>
+      <select id={id} required>
         {options.map((option, key) => (
           <option {...{ key }}>{option}</option>
         ))}
@@ -62,32 +53,16 @@ const Input = ({
 };
 
 const ContactForm = ({ onSubmit: apply }) => {
-  const [form, setForm] = useState({
-    pass: false,
-    name: '',
-    email: '',
-    phone: '',
-    type: 'Gestoria del automotor',
-    value: '',
-  });
-  const onChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.id]: e.target.value }));
-  };
+  const [pass, setPass] = useState(false);
   const onSubmit = (e) => {
     e.preventDefault();
-    setForm((prev) => ({
-      ...prev,
-      pass:
-        Object.values(prev).every((value) =>
-          value === false ? true : value !== '' && value.length > 2
-        ) && Object.values(prev).length > 1,
-    }));
-    if (form.pass) {
-      console.log(form);
-      apply(form);
-    }
+    const data = [...e.target]
+      .map((input) => ({ [input.id]: input.value }))
+      .reduce((prev, curr) => ({ ...prev, ...curr }), {});
+    delete data[''];
+    console.log(data);
   };
-  return form.pass === true ? (
+  return pass ? (
     <div className="grid place-items-center h-full select-none">
       <div>
         <p className="text-2xl font-semibold leading-5">
@@ -105,44 +80,37 @@ const ContactForm = ({ onSubmit: apply }) => {
       </div>
     </div>
   ) : (
-    <form className="flex flex-col gap-8" {...{ onChange, onSubmit }}>
+    <form className="flex flex-col gap-8" {...{ onSubmit }}>
       <p className="text-2xl font-semibold">Evienos su consulta</p>
       <div className="flex flex-col gap-1">
         <Input
           {...{
-            form,
             id: 'name',
             place: 'Como dirijirse hacia usted',
             label: 'nombre',
-            onChange,
           }}
         />
         <hr />
         <Input
           {...{
-            form,
             id: 'email',
             place: 'Le enviaremos un mensaje',
             label: 'Correo',
             type: 'email',
-            onChange,
           }}
         />
         <hr />
         <Input
           {...{
-            form,
             id: 'phone',
             place: 'En caso de urgencia',
             label: 'Telefono ó celular',
             type: 'tel',
-            onChange,
           }}
         />
         <hr />
         <Input
           {...{
-            form,
             type: 'select',
             id: 'type',
             label: 'Area',
@@ -155,19 +123,16 @@ const ContactForm = ({ onSubmit: apply }) => {
               'Escrituracion y Usucapion',
               'Divorcios, Familia y Sucesiones',
             ],
-            onChange,
           }}
         />
         <hr />
         <Input
           {...{
-            form,
             type: 'textarea',
             id: 'value',
             label: 'Consulta',
             place: 'Sea conciso, asi lo podremos.',
             className: 'min-h-[4rem] max-h-[5rem] w-full',
-            onChange,
           }}
         />
         <hr />
