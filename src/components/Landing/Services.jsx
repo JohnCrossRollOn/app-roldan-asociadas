@@ -72,7 +72,7 @@ export default () => {
     <>
       <Hr>SERVICIOS</Hr>
       <a
-        href={`services_card_${position}`}
+        href={`#services_card_${position}`}
         onClick={() => {
           setPosition(position + 1);
         }}

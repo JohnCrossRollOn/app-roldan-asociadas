@@ -11,7 +11,6 @@ const Card = ({ children }) => {
 const Input = ({
   type,
   id,
-  form,
   place,
   label,
   className,
@@ -131,7 +130,7 @@ const ContactForm = ({ onSubmit: apply }) => {
             type: 'textarea',
             id: 'value',
             label: 'Consulta',
-            place: 'Sea conciso, asi lo podremos.',
+            place: 'Sea conciso, asi lo podremos ayudar.',
             className: 'min-h-[4rem] max-h-[5rem] w-full',
           }}
         />
