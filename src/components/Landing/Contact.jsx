@@ -19,7 +19,14 @@ const Input = ({ name, form, place, className }) => (
 );
 
 const ContactForm = ({ onSubmit: apply }) => {
-  const [form, setForm] = useState({ pass: false });
+  const [form, setForm] = useState({
+    pass: false,
+    name: '',
+    email: '',
+    phone: '',
+    type: '',
+    value: '',
+  });
   const onChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -32,9 +39,16 @@ const ContactForm = ({ onSubmit: apply }) => {
           value === false ? true : value !== '' && value.length > 2
         ) && Object.values(prev).length > 1,
     }));
-    form.pass && apply(form);
+    if (form.pass) {
+      console.log(form);
+      apply(form);
+    }
   };
-  return (
+  return form.pass === true ? (
+    <div>
+      Formulario enviado con exito! Su consulta se le respondera en breve
+    </div>
+  ) : (
     <form className="flex flex-col gap-8" {...{ onChange, onSubmit }}>
       <p className="text-2xl font-semibold">Evienos su consulta</p>
       <div className="flex flex-col gap-1">
@@ -46,7 +60,18 @@ const ContactForm = ({ onSubmit: apply }) => {
           {...{ form, name: 'phone', place: 'Numero telefonico de contacto' }}
         />
         <hr />
-        <Input {...{ form, name: 'type', place: 'Tipo de consulta' }} />
+        <select name="type" value={form.type}>
+          <option hidden defaultValue>
+            Que es lo que consulta
+          </option>
+          <option>Gestoria del Automotor</option>
+          <option>Accidentes de Transito</option>
+          <option>Infracciones de Transito</option>
+          <option>Jubilaciones y Pensiones</option>
+          <option>Accidentes Laborales (ART)</option>
+          <option>Escrituracion y Usucapion</option>
+          <option>Divorcios, Familia y Sucesiones</option>
+        </select>
         <hr />
         <textarea
           className="max-h-32 h-32 w-full"
