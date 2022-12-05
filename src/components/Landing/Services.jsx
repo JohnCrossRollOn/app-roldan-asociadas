@@ -40,7 +40,10 @@ export default () => {
       <div id="servicios" />
       <Slider>
         {elements.map((item, index) => (
-          <Card key={index} className="sm:h-[30vh] md:w-[30vw]">
+          <Card
+            key={index}
+            className="overflow-hidden  sm:h-[30vh] md:w-[30vw]"
+          >
             <CardContents content={item} />
           </Card>
         ))}
