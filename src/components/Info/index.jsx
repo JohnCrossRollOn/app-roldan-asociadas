@@ -11,13 +11,13 @@ export default () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row gap-4 items-center">
+      <div className="flex flex-col md:grid md:grid-cols-2 gap-4 items-center">
         <img
           loading="lazy"
           crossOrigin="anonymous"
           src={img}
           alt="A service illustration"
-          className="h-full w-full object-contain"
+          className="h-[50vh] w-full object-contain"
         />
         <div>
           <p className="text-[3rem] font-semibold leading-10">{title}</p>
