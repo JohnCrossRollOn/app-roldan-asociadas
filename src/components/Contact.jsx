@@ -4,127 +4,97 @@ import Hr from './Utils/Hr';
 import Slider from './Utils/Slider';
 import Card from './Utils/Card';
 
-const Input = ({ type, id, place, label, className, options = [] }) => {
-  const input = {
-    text: (
-      <input
-        required
-        placeholder={place}
-        type={type}
-        id={id}
-        className={className}
-      />
-    ),
-    textarea: (
-      <textarea required className={className} id={id} placeholder={place} />
-    ),
-    select: (
-      <select id={id} required>
-        {options.map((option, key) => (
-          <option {...{ key }}>{option}</option>
-        ))}
-      </select>
-    ),
-  };
+const ContactForm = () => {
+  const [subject, setSubject] = useState('Gestoria del Automotor');
+  const changeSubject = ({ target }) => setSubject(target.value);
   return (
-    <div className={`flex flex-col`}>
-      <label
-        htmlFor={id}
-        className="text-[10px] tracking-widest font-semibold uppercase"
-      >
-        {label}
-      </label>
-      {input[type] ? input[type] : input.text}
-    </div>
-  );
-};
-
-const ContactForm = ({ onSubmit: apply }) => {
-  const [pass, setPass] = useState(false);
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const data = [...e.target]
-      .map((input) => ({ [input.id]: input.value }))
-      .reduce((prev, curr) => ({ ...prev, ...curr }), {});
-    delete data[''];
-    setPass(true);
-    apply(data);
-  };
-  return pass ? (
-    <div className="relative grid place-items-start h-full select-none">
-      <div>
-        <p className="text-2xl font-semibold leading-5">
-          Formulario enviado con exito!
-        </p>
-        <br />
-        <p className="text-xs tracking-widest">
-          Su consulta sera respondida en breve
-        </p>
-        <br />
-        <div className="absolute w-full grid place-items-center">
-          <p className="font-icon w-fit leading-none text-[6rem] border-8 border-green-400 rounded-full">
-            done
-          </p>
-        </div>
-      </div>
-    </div>
-  ) : (
-    <form className="flex flex-col gap-8" {...{ onSubmit }}>
+    <form
+      className="flex flex-col gap-8"
+      action="https://formsubmit.co/1350b51c7002345b2c33a9198df1669c"
+      method="POST"
+    >
+      <input type="hidden" name="_subject" value={subject} />
+      <input type="hidden" name="_captcha" value="false" />
       <p className="text-2xl font-semibold">Evienos su consulta</p>
       <div className="flex flex-col gap-1">
-        <Input
-          {...{
-            id: 'name',
-            place: 'Como dirijirse hacia usted',
-            label: 'nombre',
-          }}
+        <label
+          htmlFor="nombre"
+          className="text-[10px] tracking-widest font-semibold uppercase"
+        >
+          Nombre
+        </label>
+        <input
+          name="nombre"
+          id="nombre"
+          type="text"
+          placeholder="Como dirijirnos hacia usted"
+          required
         />
         <hr />
-        <Input
-          {...{
-            id: 'email',
-            place: 'Le enviaremos un mensaje',
-            label: 'Correo',
-            type: 'email',
-          }}
+        <label
+          htmlFor="email"
+          className="text-[10px] tracking-widest font-semibold uppercase"
+        >
+          Correo electronico
+        </label>
+        <input
+          name="email"
+          id="email"
+          type="email"
+          placeholder="Le enviaremos un mensaje"
+          required
         />
         <hr />
-        <Input
-          {...{
-            id: 'phone',
-            place: 'En caso de urgencia',
-            label: 'Telefono ó celular',
-            type: 'tel',
-          }}
+        <label
+          htmlFor="tel"
+          className="text-[10px] tracking-widest font-semibold uppercase"
+        >
+          Telefono ó celular
+        </label>
+        <input
+          name="tel"
+          id="tel"
+          type="tel"
+          placeholder="En caso de urgencia"
+          required
         />
         <hr />
-        <Input
-          {...{
-            type: 'select',
-            id: 'type',
-            label: 'Area',
-            options: [
-              'Gestoria del Automotor',
-              'Accidentes de Transito',
-              'Infracciones de Transito',
-              'Jubilaciones y Pensiones',
-              'Accidentes Laborales (ART)',
-              'Escrituracion y Usucapion',
-              'Divorcios, Familia y Sucesiones',
-            ],
-          }}
-        />
+        <label
+          htmlFor="tel"
+          className="text-[10px] tracking-widest font-semibold uppercase"
+        >
+          Area
+        </label>
+        <select
+          name="area"
+          id="area"
+          value={subject}
+          onChange={changeSubject}
+          required
+        >
+          <option>Gestoria del Automotor</option>
+          <option>Accidentes de Transito</option>
+          <option>Infracciones de Transito</option>
+          <option>Jubilaciones y Pensiones</option>
+          <option>Accidentes Laborales (ART)</option>
+          <option>Escrituracion y Usucapion</option>
+          <option>Divorcios, Familia y Sucesiones</option>
+          <option>Otro</option>
+        </select>
         <hr />
-        <Input
-          {...{
-            type: 'textarea',
-            id: 'value',
-            label: 'Consulta',
-            place: 'Sea conciso, asi lo podremos ayudar.',
-            className: 'w-full h-full resize-y',
-          }}
+        <label
+          htmlFor="consulta"
+          className="text-[10px] tracking-widest font-semibold uppercase"
+        >
+          Consulta
+        </label>
+        <textarea
+          id="consulta"
+          name="consulta"
+          placeholder="Sea conciso, asi lo podremos ayudar."
+          required
         />
-        <hr />
+        <input type="hidden" name="_template" value="table" />
       </div>
       <div className="w-full grid place-items-end">
         <input
