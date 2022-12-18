@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
-import Slider from '../Utils/Slider';
+import { Link } from "react-router-dom";
+import Slider from "../Utils/Slider";
 
-import Hr from '../Utils/Hr';
-import Card from '../Utils/Card';
-import elements from '../elements';
+import Hr from "../Utils/Hr";
+import Card from "../Utils/Card";
+import elements from "../elements";
 
 const CardContents = (props) => {
   const [title, description, img] = props.content;
@@ -12,7 +12,7 @@ const CardContents = (props) => {
       <img
         loading="lazy"
         crossOrigin="anonymous"
-        src={img || ''}
+        src={img || ""}
         alt="A service illustration"
         className="h-[10rem] object-contain w-full"
       />
@@ -42,7 +42,7 @@ export default () => {
         {elements.map((item, index) => (
           <Card
             key={index}
-            className="overflow-hidden  sm:h-[30vh] md:w-[30vw]"
+            className="overflow-hidden  sm:h-[30vh] md:w-[30vw] min-h-[18rem]"
           >
             <CardContents content={item} />
           </Card>

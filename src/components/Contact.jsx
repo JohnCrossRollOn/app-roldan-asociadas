@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import Hr from './Utils/Hr';
-import Slider from './Utils/Slider';
-import Card from './Utils/Card';
+import Hr from "./Utils/Hr";
+import Slider from "./Utils/Slider";
+import Card from "./Utils/Card";
 
 const ContactForm = () => {
-  const [subject, setSubject] = useState('Gestoria del Automotor');
+  const [subject, setSubject] = useState("Gestoria del Automotor");
   const changeSubject = ({ target }) => setSubject(target.value);
   return (
     <form
@@ -114,14 +114,14 @@ export default () => {
       <Hr>Contactenos</Hr>
       <div id="contacto" />
       <Slider>
-        <Card className="md:w-[30vw]">
+        <Card className="md:w-[30vw] min-h-[28rem]">
           <ContactForm
             onSubmit={(e) => {
               console.log(e);
             }}
           />
         </Card>
-        <Card className="md:w-[30vw]">
+        <Card className="md:w-[30vw] min-h-[28rem]">
           <div className="flex flex-col gap-8">
             <p className="text-2xl font-semibold">Horarios de Atencion</p>
             <div>
@@ -155,11 +155,10 @@ export default () => {
             </div>
           </div>
         </Card>
-        <Card className="md:w-[30vw]">
+        <Card className="flex flex-col md:w-[30vw] min-h-[28rem]">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3289.101925606311!2d-58.66534508047211!3d-34.47493850492866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca3690eb57bc3%3A0x2c340646770f9291!2sColombia%201076%2C%20B1618EMD%20El%20Talar%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1667701409545!5m2!1ses-419!2sar"
-            className="w-full h-full rounded-lg"
-            loading="lazy"
+            className="w-full h-full flex-1 rounded-lg"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </Card>
