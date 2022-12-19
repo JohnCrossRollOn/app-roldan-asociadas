@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from "react";
 
 const Carousel = ({ children }) => {
   const maxScrollWidth = useRef(0);
@@ -22,13 +22,13 @@ const Carousel = ({ children }) => {
   };
 
   const isDisabled = (direction) => {
-    if (direction === 'prev') {
+    if (direction === "prev") {
       return currentIndex <= 0;
     }
 
-    if (direction === 'next' && carousel.current !== null) {
+    if (direction === "next" && carousel.current !== null) {
       return (
-        child.current.offsetWidth * (currentIndex + 1) >= maxScrollWidth.current
+        child.current.offsetWidth * (currentIndex + 2) >= maxScrollWidth.current
       );
     }
 
@@ -65,14 +65,14 @@ const Carousel = ({ children }) => {
         <button
           onClick={movePrev}
           className="text-slate-800 disabled:opacity-25 disabled:cursor-not-allowed z-10 font-icon"
-          disabled={isDisabled('prev')}
+          disabled={isDisabled("prev")}
         >
           navigate_before
         </button>
         <button
           onClick={moveNext}
           className="text-slate-800 disabled:opacity-25 disabled:cursor-not-allowed z-10 font-icon"
-          disabled={isDisabled('next')}
+          disabled={isDisabled("next")}
         >
           navigate_next
         </button>
