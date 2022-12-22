@@ -42,7 +42,7 @@ export default () => {
         {elements.map((item, index) => (
           <Card
             key={index}
-            className="overflow-hidden h-[40vh]  sm:h-[30vh] md:w-[30vw]"
+            className="overflow-hidden h-[50vh] sm:h-[40vh] md:w-[30vw]"
           >
             <CardContents content={item} />
           </Card>
