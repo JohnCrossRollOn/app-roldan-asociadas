@@ -1,16 +1,20 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import elements from '../elements';
 import Collapsable from '../Utils/Collapsable';
 
 export default () => {
   const { area } = useParams();
+  const navigate = useNavigate();
   const [title, description, img, questions] = elements.find(
     (item) => item[0] === area
   );
 
   return (
     <>
+    <div className='flex flex-row justify-start'>
+      <button className='text-sm font-extrabold' onClick={()=>navigate("/")}>Volver&#9166;</button>
+    </div>
       <div className="flex flex-col md:grid md:grid-cols-2 gap-4 items-center">
         <img
           loading="lazy"
