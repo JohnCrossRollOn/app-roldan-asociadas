@@ -22,7 +22,7 @@ export default [
   [
     "Derecho Laboral",
     "Despidos, Reclamos laborales, Trabajo en negro, Suspenciones, Personal de Casas Particulares",
-    "",
+    "https://ouch-cdn2.icons8.com/TQjrntNciq2-y-M9tT74WUNC0m_nohUdD_t9cy8no_s/rs:fit:608:456/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvOTIy/L2NhZjQ0MDY2LTEz/ODgtNDExNy04YjNi/LTc1OGNkNzExZDIz/Yi5zdmc.png",
     [
       ["Pregunta Frecuente", "Respuesta Frecuente"],
       ["Pregunta Frecuente", "Respuesta Frecuente"],
