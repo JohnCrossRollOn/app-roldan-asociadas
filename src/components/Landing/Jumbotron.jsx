@@ -4,7 +4,7 @@ export default () => {
   return (
     <div
       className="hero min-h-screen snap-start pt-12"
-      style={{ backgroundImage: `url("https://placeimg.com/1920/1080/arch")` }}>
+      style={{ backgroundImage: `url(${elements.jumbotron.image})` }}>
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-left text-neutral-content">
         <div className="">
