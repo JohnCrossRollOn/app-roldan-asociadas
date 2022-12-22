@@ -14,6 +14,10 @@
     scroll-behavior: smooth;
     scroll-padding-top: 8rem;
   }
+
+  .constrain-on-growth {
+    @apply px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64;
+  }
 }
 
 .scrollbar-hide::-webkit-scrollbar {

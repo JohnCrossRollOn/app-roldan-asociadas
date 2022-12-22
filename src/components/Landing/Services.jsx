@@ -1,49 +1,46 @@
-import { Link } from "react-router-dom";
-import Slider from "../Utils/Slider";
+import { Link } from 'react-router-dom'
+import Slider from '../Utils/Slider'
 
-import Hr from "../Utils/Hr";
-import Card from "../Utils/Card";
-import elements from "../elements";
-
-const CardContents = props => {
-  const [title, description, img] = props.content
-  return (
-    <div className="snap-center snap-always">
-      <img
-        loading="lazy"
-        crossOrigin="anonymous"
-        src={img || ''}
-        alt="A service illustration"
-        className="h-[10rem] object-contain w-full"
-      />
-      <div>
-        <p className="text-xl font-semibold">{title}</p>
-        <p className="text-xs bg-gradient-to-b from-slate-600 text-transparent bg-clip-text">
-          {description}
-        </p>
-      </div>
-      <Link
-        to={title}
-        className="absolute bottom-[1rem] flex justify-center font-bold bg-primary w-fit p-2 px-3 rounded-full shadow-md">
-        Saber mas
-      </Link>
-    </div>
-  )
-}
+import Hr from '../Utils/Hr'
+import Card from '../Utils/Card'
+import elements from '../elements'
 
 export default () => {
   return (
-    <div className="min-h-screen snap-start px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64">
-      <p className="text-xl font-semibold">Nos especializamos en</p>
-      <Slider>
-        {elements.services.map((item, index) => (
-          <Card
-            key={index}
-            className="overflow-hidden h-[50vh] sm:h-[40vh] md:w-[30vw]">
-            <CardContents content={item} />
-          </Card>
+    <div className="min-h-screen snap-start py-32 constrain-on-growth grid gap-4">
+      <p className="text-[2rem] text-slate-200 font-semibold">
+        Nos especializamos en:
+      </p>
+
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {elements.services.map(([title, subtitle, img]) => (
+          <div className="card h-[40vh] bg-white image-full" key={title}>
+            <figure>
+              <img
+                src={img}
+                alt={title}
+                loading="lazy"
+                crossOrigin="anonymous"
+              />
+            </figure>
+            <div className="card-body text-white border-2 border-orange-500 rounded-xl">
+              <h2 className="card-title text-white text-2xl">{title}</h2>
+              <p className="h-20 overflow-hidden">{subtitle}</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Saber Más</button>
+              </div>
+            </div>
+          </div>
         ))}
-      </Slider>
+
+        <div className="grid place-items-center md:col-span-2">
+          <div className="chat chat-start">
+            <p className="chat-bubble bg-slate-200 text-[2rem] text-slate-800 font-semibold p-4">
+              No dudes en consultarnos!
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

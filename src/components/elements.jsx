@@ -1,16 +1,8 @@
 export default {
   jumbotron: {
-    title: (
-      <p className="text-[2rem] leading-8 font-extrabold">
-        Nosotros somos tu estudio de abogacia!
-      </p>
-    ),
-    subtitle: (
-      <p className="leading-relaxed tracking-wide">
-        Tu lugar de <strong>confianza</strong>, ya lo tenes. <br />
-        Consulta a nuestros profesionales, <strong>sin cargo</strong>.
-      </p>
-    ),
+    title: 'Nosotros somos tu estudio de abogacia!',
+    subtitle:
+      'Tu lugar de confianza, ya lo tenes. Consulta a nuestros profesionales, sin cargo.',
   },
   services: [
     [
