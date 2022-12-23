@@ -10,7 +10,7 @@ export default () => {
     <div
       id="app"
       data-theme="roldanTheme"
-      className="h-screen snap-y snap-proximity overflow-y-scroll overflow-x-hidden text-slate-800 scroll-smooth">
+      className="h-screen overflow-y-scroll overflow-x-hidden text-slate-800 scroll-smooth">
       <Nav />
       <Routes>
         <Route path="/" element={<Landing />} />
