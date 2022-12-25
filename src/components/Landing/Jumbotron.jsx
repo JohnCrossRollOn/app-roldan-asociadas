@@ -1,22 +1,74 @@
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from 'react'
+
+import elements from '../elements'
+
+const TextLoop = ({ texts }) => {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    setTimeout(() => {
+      let next = index + 1
+      setIndex(next % texts.length)
+    }, 2 * 1000)
+  }, [index, setIndex, texts])
+
+  return (
+    <div>
+      <AnimatePresence mode="popLayout">
+        <motion.span
+          key={index}
+          layout
+          className="w-fit transition-all flex"
+          variants={{
+            enter: {
+              translateY: 20,
+              opacity: 0,
+              height: 0,
+            },
+            center: {
+              translateY: 0,
+              opacity: 1,
+            },
+            exit: {
+              translateY: -20,
+              opacity: 0,
+              height: 0,
+            },
+          }}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{
+            translateY: { type: 'spring', stiffness: 1000, damping: 200 },
+            opacity: { duration: 0.5 },
+          }}>
+          {texts[index]}
+        </motion.span>
+      </AnimatePresence>
+    </div>
+  )
+}
+
 export default () => {
   return (
-    <div className="w-full my-16 select-none rounded-lg flex flex-col items-center gap-4 md:gap-16 md:grid md:grid-cols-2">
-      <img
-        crossOrigin="anonymous"
-        loading="lazy"
-        src="https://res.cloudinary.com/dse7tzeho/image/upload/v1670084291/app-roldan-asociadas/Sin_t%C3%ADtulo-modified_rsyv8u.png"
-        alt="Nosotros con un juez"
-        className=""
-      />
-      <div className="flex flex-col gap-4">
-        <p className="text-[2rem] leading-8 font-extrabold">
-          Nosotros somos tu estudio de abogacia!
-        </p>
-        <p className="leading-relaxed tracking-wide">
-          Tu lugar de <strong>confianza</strong>, ya lo tenes. <br />
-          Consulta a nuestros profesionales, <strong>sin cargo</strong>.
-        </p>
+    <div
+      className="hero h-screen snap-start"
+      style={{ backgroundImage: `url(${elements.jumbotron.image})` }}>
+      <div className="hero-overlay bg-opacity-60"></div>
+      <div className="hero-content text-left text-neutral-content w-full flex justify-start p-4">
+        <div className="flex flex-col gap-4">
+          <div className="text-2xl font-semibold text-orange-500 bg-black px-4 w-fit">
+            {elements.jumbotron.subtitle}
+          </div>
+          <h2 className="text-4xl md:text-[4rem] text-white font-semibold ">
+            {elements.jumbotron.title}
+          </h2>
+          <h2 className="text-4xl md:text-[4rem] text-white font-semibold ">
+            <TextLoop texts={elements.services.map(i => i[0])} />
+          </h2>
+        </div>
       </div>
     </div>
-  );
-};
+  )
+}
