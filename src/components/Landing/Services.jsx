@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion'
 
 import elements from '../elements'
 
@@ -21,67 +21,100 @@ function Service({ service, selectedGroup }) {
   const [title, subtitle, img, faq] = service
   const [selected, setSelected] = selectedGroup
 
-  return selected === title ? (
-    <motion.div
-      layoutId={title}
-      id={title}
-      className="card min-h-[40vh] h-fit bg-white md:card-side md:col-span-2 lg:col-span-3 border-2 border-orange-500"
-      key={title}>
-      <figure className="w-full md:max-w-[30vw] md:min-w-[30vw] self-start md:py-8 md:pl-8">
-        <img
-          src={img}
-          alt={title}
-          loading="lazy"
-          crossOrigin="anonymous"
-          className="h-full md:h-[40vh] rounded-xl"
-        />
-      </figure>
-      <div className="card-body text-slate-800 rounded-xl">
-        <h2 className="card-title text-slate-800 text-2xl">{title}</h2>
-        <p className="">{subtitle}</p>
-        {faq.map(faq => (
-          <Faq faq={faq} />
-        ))}
+  const open = title => e => setTimeout(() => setSelected(title), 0)
+  const close = e => setTimeout(() => setSelected(''), 0)
+  const closeOnClickOutside = id => e => e.target.id === id && close()
 
-        <div className="card-actions justify-end mt-4">
-          <button className="btn btn-ghost" onClick={() => setSelected('')}>
-            volver
-          </button>
-          <a href="#contacto" className="btn btn-primary">
-            Contacto
-          </a>
+  return (
+    <div>
+      {selected !== title ? (
+        <motion.div
+          layoutId={'service_layout_' + title}
+          className="bg-white rounded-xl image-full w-fit"
+          id={title}
+          key={title}>
+          <motion.figure layoutId={'service_layout_figure' + title}>
+            <img
+              src={img}
+              alt={title}
+              loading="lazy"
+              crossOrigin="anonymous"
+              className="h-full rounded-xl shadow-lg"
+            />
+          </motion.figure>
+          <div className="text-slate-800 p-4 h-32 overflow-hidden">
+            <motion.h2
+              layoutId={'service_layout_h2_' + title}
+              className="text-2xl font-semibold">
+              {title}
+            </motion.h2>
+            <motion.p
+              layoutId={'service_layout_p' + title}
+              className="h-20 overflow-hidden">
+              {subtitle}
+            </motion.p>
+          </div>
+          <div className="flex flex-col justify-end p-4">
+            <motion.button
+              layoutId={'service_layout_button' + title}
+              className="btn btn-primary shadow-xl"
+              onClick={open(title)}>
+              Saber Más
+            </motion.button>
+          </div>
+        </motion.div>
+      ) : (
+        <div
+          id="outside"
+          className="fixed z-50 w-screen h-screen top-0 left-0 overflow-hidden grid place-items-center bg-opacity-50 bg-black"
+          onClick={closeOnClickOutside('outside')}>
+          <motion.div
+            layoutId={'service_layout_' + title}
+            className="card bg-white md:card-side md:col-span-2 lg:col-span-3 shadow-xl w-screen h-[80vh] md:w-[80vw]"
+            key={title}>
+            <motion.figure
+              layout="position"
+              layoutId={'service_layout_figure' + title}
+              className="w-full md:max-w-[30vw] md:min-w-[30vw] self-start md:py-8 md:pl-8">
+              <img
+                src={img}
+                alt={title}
+                loading="lazy"
+                crossOrigin="anonymous"
+                className="h-full md:h-[40vh] rounded-xl"
+              />
+            </motion.figure>
+            <div className="card-body text-slate-800 rounded-xl">
+              <motion.h2
+                layoutId={'service_layout_h2_' + title}
+                className="card-title text-slate-800 text-2xl">
+                {title}
+              </motion.h2>
+              <motion.p layoutId={'service_layout_p' + title} className="">
+                {subtitle}
+              </motion.p>
+              {faq.map(faq => (
+                <Faq faq={faq} />
+              ))}
+
+              <div className="card-actions justify-end mt-4">
+                <button className="btn btn-ghost" onClick={close}>
+                  volver
+                </button>
+                <motion.a
+                  layoutId={'service_layout_button' + title}
+                  layout="position"
+                  href="#contacto"
+                  className="btn btn-primary"
+                  onClick={close}>
+                  Contacto
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </motion.div>
-  ) : (
-    <motion.div
-      layoutId={title}
-      className="card h-[40vh] bg-white image-full"
-      id={title}
-      key={title}>
-      <figure>
-        <img
-          src={img}
-          alt={title}
-          loading="lazy"
-          crossOrigin="anonymous"
-          className="h-full"
-        />
-      </figure>
-      <div className="card-body text-white border-2 border-neutral hover:border-orange-500 rounded-xl">
-        <h2 className="card-title text-white text-2xl">{title}</h2>
-        <p className="h-20 overflow-hidden">{subtitle}</p>
-        <div className="card-actions justify-end">
-          <button
-            className="btn btn-primary"
-            onClick={e => {
-              setSelected(title)
-            }}>
-            Saber Más
-          </button>
-        </div>
-      </div>
-    </motion.div>
+      )}
+    </div>
   )
 }
 

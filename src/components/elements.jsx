@@ -1,8 +1,7 @@
 export default {
   jumbotron: {
-    title: 'Nosotros somos tu estudio de abogacia!',
-    subtitle:
-      'Tu lugar de confianza, ya lo tenes. Consulta a nuestros profesionales, sin cargo.',
+    title: 'Consultenos',
+    subtitle: 'Somos el estudio de abogacia por excelencia.',
     image: 'https://placeimg.com/1920/1080/arch',
   },
   services: [
