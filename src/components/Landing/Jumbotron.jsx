@@ -10,7 +10,7 @@ const TextLoop = ({ texts }) => {
     setTimeout(() => {
       let next = index + 1
       setIndex(next % texts.length)
-    }, 3 * 1000)
+    }, 2 * 1000)
   }, [index, setIndex, texts])
 
   return (
