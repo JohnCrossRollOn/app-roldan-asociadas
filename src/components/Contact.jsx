@@ -1,15 +1,40 @@
-import { useState } from 'react'
+import elements from './elements'
+
+import { useState, useRef } from 'react'
+import { sendForm } from '@emailjs/browser'
+
+const areas = elements.services.map(service => service[0])
 
 const ContactForm = () => {
-  const [subject, setSubject] = useState('Gestoria del Automotor')
+  const [subject, setSubject] = useState(areas[0])
+  const [isDisabled, setDisabled] = useState(false)
+  const [isSubmitted, setSubmitted] = useState(false)
+  const form = useRef()
+
   const changeSubject = ({ target }) => setSubject(target.value)
+
+  const onSubmit = e => {
+    e.preventDefault()
+    if (!isDisabled) {
+      setDisabled(true)
+      console.log('sending...')
+      sendForm(
+        'service_0xgn9yc',
+        'template_qqemzbo',
+        form.current,
+        'NfX36qsCnNkzd9UpG'
+      ).then(() => {
+        setSubmitted(true)
+        console.log('submitted')
+      })
+    }
+  }
   return (
     <form
+      ref={form}
       className="card bg-white rounded-xl row-span-2"
-      action="https://formsubmit.co/1350b51c7002345b2c33a9198df1669c"
-      method="POST">
+      onSubmit={onSubmit}>
       <input type="hidden" name="_subject" value={subject} />
-      <input type="hidden" name="_captcha" value="false" />
       <div className="card-body">
         <p className="text-2xl font-semibold">Evienos su consulta</p>
         <label
@@ -18,11 +43,11 @@ const ContactForm = () => {
           Nombre
         </label>
         <input
+          disabled={isDisabled}
           className="input text-white"
           name="nombre"
-          id="nombre"
           type="text"
-          placeholder="Como dirijirnos hacia usted"
+          placeholder="nombre"
           required
         />
         <hr />
@@ -32,9 +57,9 @@ const ContactForm = () => {
           Correo electronico
         </label>
         <input
+          disabled={isDisabled}
           className="input text-white"
           name="email"
-          id="email"
           type="email"
           placeholder="Le enviaremos un mensaje"
           required
@@ -46,9 +71,9 @@ const ContactForm = () => {
           Telefono ó celular
         </label>
         <input
+          disabled={isDisabled}
           className="input text-white"
           name="tel"
-          id="tel"
           type="tel"
           placeholder="En caso de urgencia"
           required
@@ -60,19 +85,15 @@ const ContactForm = () => {
           Area
         </label>
         <select
+          disabled={isDisabled}
           name="area"
-          id="area"
           value={subject}
           onChange={changeSubject}
           className="select text-white"
           required>
-          <option>Gestoria del Automotor</option>
-          <option>Accidentes de Transito</option>
-          <option>Infracciones de Transito</option>
-          <option>Jubilaciones y Pensiones</option>
-          <option>Accidentes Laborales (ART)</option>
-          <option>Escrituracion y Usucapion</option>
-          <option>Divorcios, Familia y Sucesiones</option>
+          {areas.map(area => (
+            <option key={area}>{area}</option>
+          ))}
           <option>Otro</option>
         </select>
         <hr />
@@ -82,21 +103,22 @@ const ContactForm = () => {
           Consulta
         </label>
         <textarea
-          id="consulta"
+          disabled={isDisabled}
           name="consulta"
           placeholder="Sea conciso, asi lo podremos ayudar."
           className="textarea text-white"
           required
         />
-        <input
-          className="input text-white"
-          type="hidden"
-          name="_template"
-          value="table"
-        />
       </div>
       <div className="card-actions justify-end p-4">
-        <input type="submit" value="Enviar" className="btn btn-primary " />
+        <input
+          disabled={isSubmitted && isDisabled ? false : isDisabled}
+          type="submit"
+          value={
+            isSubmitted ? 'Enviado' : isDisabled ? 'Enviando...' : 'Enviar'
+          }
+          className={`btn btn-primary ${isSubmitted ? 'btn-success' : ''}`}
+        />
       </div>
     </form>
   )
