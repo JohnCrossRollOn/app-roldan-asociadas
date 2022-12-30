@@ -71,7 +71,7 @@ export default {
       ],
     ],
     [
-      'Escrituracion y Usucapion',
+      'Escrituración y Usucapión',
       'Abogados especialistas en Escrituracion y Usucapion',
       'https://res.cloudinary.com/dse7tzeho/image/upload/v1671737275/app-roldan-asociadas/usucapion-768x576_o3e18l.jpg',
       [
