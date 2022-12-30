@@ -52,7 +52,7 @@ export default {
     ],
     [
       'Accidentes de Tránsito',
-      'Abogados con sólida experiencia en reclamos y daños materiales contra las compañias de seguros. Auto, Moto, bicicleta, Transportados y Peatón.',
+      'Abogados con sólida experiencia en reclamos y daños materiales contra las compañías de seguros. Auto, Moto, bicicleta, Transportados y Peatón.',
       'https://res.cloudinary.com/dse7tzeho/image/upload/v1671737252/app-roldan-asociadas/N6LXFGDWQILBOHU5PARNUDGDHQ_xkmah4.jpg',
       [
         ['Pregunta Frecuente', 'Respuesta Frecuente'],
@@ -61,7 +61,7 @@ export default {
       ],
     ],
     [
-      'Infracciones de Transito',
+      'Infracciones de Tránsito',
       'Somos abogados especialistas en Derecho de Faltas de Tránsito. Brindamos un Servicio Legal para que no pagues de más, resolvemos tus multas de tránsito de forma on-line.',
       'https://res.cloudinary.com/dse7tzeho/image/upload/v1671737266/app-roldan-asociadas/multas-1-3ebm8jv2c7ng-770x470_cjxxh1.jpg',
       [
@@ -81,7 +81,7 @@ export default {
       ],
     ],
     [
-      'Gestoria del Automotor',
+      'Gestoría del Automotor',
       'Nuestros profesionales realizan diferentes trámites en los Registros de la Propiedad Automotor, Dirección de Rentas, Dependencias Policiales, Oficinas Municipales y Compañias de Seguros.',
       'https://res.cloudinary.com/dse7tzeho/image/upload/v1671737283/app-roldan-asociadas/OIP_rhwamx.jpg',
       [

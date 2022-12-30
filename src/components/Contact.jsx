@@ -49,7 +49,7 @@ const ContactForm = () => {
       onSubmit={onSubmit}>
       <input type="hidden" name="_subject" value={subject} />
       <div className="card-body">
-        <p className="text-2xl font-semibold">Envienos su consulta</p>
+        <p className="text-2xl font-semibold">Envíenos su consulta</p>
         <label
           htmlFor="nombre"
           className="text-[10px] tracking-widest font-semibold uppercase">
@@ -148,7 +148,7 @@ export default () => {
 
       <div className="card-body rounded-xl bg-white">
         <div className="flex flex-col gap-8">
-          <p className="text-2xl font-semibold">Horarios de Atencion</p>
+          <p className="text-2xl font-semibold">Horarios de Atención</p>
           <div>
             <p className="text-xs">Lunes a Viernes</p>
             <hr />
