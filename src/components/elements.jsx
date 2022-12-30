@@ -4,6 +4,11 @@ export default {
     subtitle: 'Somos el estudio de abogacia por excelencia.',
     image: 'https://placeimg.com/1920/1080/arch',
   },
+  ourselves: {
+    title: 'Somos un equipo de abogados que brinda un asesoramiento integral',
+    subtitle:
+      'El estudio jurídico Roldan & Asociadas está integrado por profesionales de excelencia, orientados a responder eficientemente todas las necesidades jurídicas de nuestros clientes, acompañándolos en el proceso de manera personalizada directa, generando comodidad y confianza.',
+  },
   services: [
     [
       'Divorcios, Familia y Sucesiones',

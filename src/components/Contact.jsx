@@ -29,14 +29,27 @@ const ContactForm = () => {
       })
     }
   }
-  return (
+  return isSubmitted ? (
+    <div className="card bg-white rounded-xl row-span-2">
+      <div className="card-body grid place-items-center">
+        <div className="text-center">
+          <span className="font-icon text-green-500 text-[10rem]">check</span>
+          <h2 className="font-semibold text-xl">Enviado!</h2>
+          <h6 className="font-light">
+            Gracias por su consulta,
+            <br /> estaremos respondiendo a la brevedad.
+          </h6>
+        </div>
+      </div>
+    </div>
+  ) : (
     <form
       ref={form}
       className="card bg-white rounded-xl row-span-2"
       onSubmit={onSubmit}>
       <input type="hidden" name="_subject" value={subject} />
       <div className="card-body">
-        <p className="text-2xl font-semibold">Evienos su consulta</p>
+        <p className="text-2xl font-semibold">Envienos su consulta</p>
         <label
           htmlFor="nombre"
           className="text-[10px] tracking-widest font-semibold uppercase">
@@ -112,12 +125,10 @@ const ContactForm = () => {
       </div>
       <div className="card-actions justify-end p-4">
         <input
-          disabled={isSubmitted && isDisabled ? false : isDisabled}
+          disabled={isDisabled}
           type="submit"
-          value={
-            isSubmitted ? 'Enviado' : isDisabled ? 'Enviando...' : 'Enviar'
-          }
-          className={`btn btn-primary ${isSubmitted ? 'btn-success' : ''}`}
+          value="Enviar"
+          className="btn btn-primary"
         />
       </div>
     </form>
