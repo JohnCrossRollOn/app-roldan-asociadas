@@ -81,7 +81,7 @@ function Service({ service, selectedGroup }) {
                 alt={title}
                 loading="lazy"
                 crossOrigin="anonymous"
-                className="h-full md:h-[40vh] rounded-xl"
+                className="w-full md:h-[40vh] rounded-xl"
               />
             </motion.figure>
             <div className="card-body text-slate-800 rounded-xl">

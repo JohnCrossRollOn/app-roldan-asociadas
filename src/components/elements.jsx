@@ -90,5 +90,15 @@ export default {
         ['Pregunta Frecuente', 'Respuesta Frecuente'],
       ],
     ],
+    [
+      'Jubilaciones y Pensiones',
+      'Consultoria Previsional, Jubilación Planificada, Pensión por Fallecimiento, Jubilación para Autónomos.',
+      'https://res.cloudinary.com/dse7tzeho/image/upload/v1671739528/app-roldan-asociadas/pensiones_sj0mji.jpg',
+      [
+        ['Pregunta Frecuente', 'Respuesta Frecuente'],
+        ['Pregunta Frecuente', 'Respuesta Frecuente'],
+        ['Pregunta Frecuente', 'Respuesta Frecuente'],
+      ],
+    ],
   ],
 }
